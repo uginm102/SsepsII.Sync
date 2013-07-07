@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d74ccca8db443d5a2853e84612b9d33" Name="Diagram1">
+        <EntityTypeShape EntityType="SsepsIISynModel.Employee" Width="1.5" PointX="3.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.EmployeeAssignment" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.EmployeeEvent" Width="1.5" PointX="7.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.EmployeePayItem" Width="1.5" PointX="6" PointY="33.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.EmployeePayroll" Width="1.5" PointX="6" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.EmployeePayrollHistory" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.InstallationConfig" Width="1.5" PointX="5.25" PointY="26.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.ListItem" Width="1.5" PointX="12" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.ListType" Width="1.5" PointX="9.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.Log" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.MDA_CONFIG" Width="1.5" PointX="5.25" PointY="30.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.MdaGovernmentMapping" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.MdaStructure" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SITE_CONFIG" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SSEPS_CONFIG" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SystemUser" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SystemUserMda" Width="1.5" PointX="8.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SystemUserRole" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SystemUserSupervisedMda" Width="1.5" PointX="8.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.TransData" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SsepsIISynModel.TransferredEmployee" Width="1.5" PointX="8.25" PointY="20.375" IsExpanded="true" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeeAssignment_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeePayItem_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeePayroll_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemUser_SystemUser" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_TransferredEmployee_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeeAssignment_MDAGovernmentMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeeEvent_EmployeeAssignment" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeePayrollHistory_MdaGovernmentMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_InstallationConfig_MDAGovernmentMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_ListItem_ListType" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_MDA_CONFIG_MdaGovernmentMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_MdaGovernmentMapping_MdaStructure" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemUserMda_MdaGovernmentMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemUserSupervisedMda_MdaGovernmentMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_TransferredEmployee_MdaGovernmentMapping" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemUserMda_SystemUser" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemUserRole_SystemUser" ManuallyRouted="false" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemUserSupervisedMda_SystemUser" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SsepsIISynModel.PayItem" Width="1.5" PointX="0.15812793381424989" PointY="8.6788265596510961" />
+        <EntityTypeShape EntityType="SsepsIISynModel.PayItemMDAStructureMapping" Width="1.5" PointX="4.3767779396738753" PointY="25.134557944319472" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeeEvent_PayItem" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeePayItem_PayItem" />
+        <AssociationConnector Association="SsepsIISynModel.FK_PayItemMDAStructureMapping_MdaStructure" />
+        <AssociationConnector Association="SsepsIISynModel.FK_PayItemMDAStructureMapping_PayItem" />
+        <EntityTypeShape EntityType="SsepsIISynModel.Government" Width="1.5" PointX="3.375" PointY="0.625" />
+        <AssociationConnector Association="SsepsIISynModel.FK_Government_Government" />
+        <AssociationConnector Association="SsepsIISynModel.FK_MdaGovernmentMapping_Government" />
+        <EntityTypeShape EntityType="SsepsIISynModel.EmployeeAssignmentHistory" Width="1.5" PointX="4.5731755199717243" PointY="14.53688912770566" />
+        <EntityTypeShape EntityType="SsepsIISynModel.BankBranch" Width="1.5" PointX="11.35356206789313" PointY="10.169358705249316" />
+        <EntityTypeShape EntityType="SsepsIISynModel.EmployeeBankAccount" Width="1.5" PointX="9.4421081642816347" PointY="16.351138331159547" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeeBankAccount_BankBranch" />
+        <AssociationConnector Association="SsepsIISynModel.FK_EmployeeBankAccount_Employee" />
+        <EntityTypeShape EntityType="SsepsIISynModel.State" Width="1.5" PointX="5.7004658252468641" PointY="25.316087630258913" />
+        <EntityTypeShape EntityType="SsepsIISynModel.DirectorateListing" Width="1.5" PointX="9.36314005840716" PointY="14.534918285224084" />
+        <AssociationConnector Association="SsepsIISynModel.FK_DirectorateListing_MdaGovernmentMapping" />
+        <AssociationConnector Association="SsepsIISynModel.FK_TransferredEmployee_DirectorateListing" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SystemPermission" Width="1.5" PointX="5.0475724139472344" PointY="31.024505212448773" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SystemRole" Width="1.5" PointX="7.8145598600686341" PointY="1.0230949376817304" />
+        <EntityTypeShape EntityType="SsepsIISynModel.SystemRolePermission" Width="1.5" PointX="1.6647330697927314" PointY="1.75454588316127" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemRolePermission_SystemPermission" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemRolePermission_SystemRole" />
+        <AssociationConnector Association="SsepsIISynModel.FK_SystemUserRole_SystemRole" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

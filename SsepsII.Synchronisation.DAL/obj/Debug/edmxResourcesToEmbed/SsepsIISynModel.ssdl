@@ -1,0 +1,1090 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SsepsIISynModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SsepsIISynModelStoreContainer">
+    <EntitySet Name="BankBranch" EntityType="SsepsIISynModel.Store.BankBranch" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DirectorateListing" EntityType="SsepsIISynModel.Store.DirectorateListing" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="SsepsIISynModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeAssignment" EntityType="SsepsIISynModel.Store.EmployeeAssignment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeAssignmentHistory" EntityType="SsepsIISynModel.Store.EmployeeAssignmentHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeBankAccount" EntityType="SsepsIISynModel.Store.EmployeeBankAccount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeeEvent" EntityType="SsepsIISynModel.Store.EmployeeEvent" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeePayItem" EntityType="SsepsIISynModel.Store.EmployeePayItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeePayroll" EntityType="SsepsIISynModel.Store.EmployeePayroll" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeePayrollHistory" EntityType="SsepsIISynModel.Store.EmployeePayrollHistory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Government" EntityType="SsepsIISynModel.Store.Government" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InstallationConfig" EntityType="SsepsIISynModel.Store.InstallationConfig" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ListItem" EntityType="SsepsIISynModel.Store.ListItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ListType" EntityType="SsepsIISynModel.Store.ListType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Log" EntityType="SsepsIISynModel.Store.Log" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MDA_CONFIG" EntityType="SsepsIISynModel.Store.MDA_CONFIG" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MdaGovernmentMapping" EntityType="SsepsIISynModel.Store.MdaGovernmentMapping" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MdaStructure" EntityType="SsepsIISynModel.Store.MdaStructure" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayItem" EntityType="SsepsIISynModel.Store.PayItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PayItemMDAStructureMapping" EntityType="SsepsIISynModel.Store.PayItemMDAStructureMapping" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SITE_CONFIG" EntityType="SsepsIISynModel.Store.SITE_CONFIG" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SSEPS_CONFIG" EntityType="SsepsIISynModel.Store.SSEPS_CONFIG" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemPermission" EntityType="SsepsIISynModel.Store.SystemPermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemRole" EntityType="SsepsIISynModel.Store.SystemRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemRolePermission" EntityType="SsepsIISynModel.Store.SystemRolePermission" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemUser" EntityType="SsepsIISynModel.Store.SystemUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemUserMda" EntityType="SsepsIISynModel.Store.SystemUserMda" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemUserRole" EntityType="SsepsIISynModel.Store.SystemUserRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemUserSupervisedMda" EntityType="SsepsIISynModel.Store.SystemUserSupervisedMda" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TransData" EntityType="SsepsIISynModel.Store.TransData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TransferredEmployee" EntityType="SsepsIISynModel.Store.TransferredEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="State" EntityType="SsepsIISynModel.Store.State" store:Type="Views" store:Schema="dbo" store:Name="State">
+      <DefiningQuery>SELECT 
+      [State].[StateID] AS [StateID], 
+      [State].[StateName] AS [StateName], 
+      [State].[Government] AS [Government]
+      FROM [dbo].[State] AS [State]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_DirectorateListing_MdaGovernmentMapping" Association="SsepsIISynModel.Store.FK_DirectorateListing_MdaGovernmentMapping">
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+      <End Role="DirectorateListing" EntitySet="DirectorateListing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeAssignment_Employee" Association="SsepsIISynModel.Store.FK_EmployeeAssignment_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeAssignment" EntitySet="EmployeeAssignment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeAssignment_MDAGovernmentMapping" Association="SsepsIISynModel.Store.FK_EmployeeAssignment_MDAGovernmentMapping">
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+      <End Role="EmployeeAssignment" EntitySet="EmployeeAssignment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeBankAccount_BankBranch" Association="SsepsIISynModel.Store.FK_EmployeeBankAccount_BankBranch">
+      <End Role="BankBranch" EntitySet="BankBranch" />
+      <End Role="EmployeeBankAccount" EntitySet="EmployeeBankAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeBankAccount_Employee" Association="SsepsIISynModel.Store.FK_EmployeeBankAccount_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeBankAccount" EntitySet="EmployeeBankAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeEvent_EmployeeAssignment" Association="SsepsIISynModel.Store.FK_EmployeeEvent_EmployeeAssignment">
+      <End Role="EmployeeAssignment" EntitySet="EmployeeAssignment" />
+      <End Role="EmployeeEvent" EntitySet="EmployeeEvent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeEvent_PayItem" Association="SsepsIISynModel.Store.FK_EmployeeEvent_PayItem">
+      <End Role="PayItem" EntitySet="PayItem" />
+      <End Role="EmployeeEvent" EntitySet="EmployeeEvent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePayItem_Employee" Association="SsepsIISynModel.Store.FK_EmployeePayItem_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeePayItem" EntitySet="EmployeePayItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePayItem_PayItem" Association="SsepsIISynModel.Store.FK_EmployeePayItem_PayItem">
+      <End Role="PayItem" EntitySet="PayItem" />
+      <End Role="EmployeePayItem" EntitySet="EmployeePayItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePayroll_Employee" Association="SsepsIISynModel.Store.FK_EmployeePayroll_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeePayroll" EntitySet="EmployeePayroll" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePayrollHistory_MdaGovernmentMapping" Association="SsepsIISynModel.Store.FK_EmployeePayrollHistory_MdaGovernmentMapping">
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+      <End Role="EmployeePayrollHistory" EntitySet="EmployeePayrollHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Government_Government" Association="SsepsIISynModel.Store.FK_Government_Government">
+      <End Role="Government" EntitySet="Government" />
+      <End Role="Government1" EntitySet="Government" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstallationConfig_MDAGovernmentMapping" Association="SsepsIISynModel.Store.FK_InstallationConfig_MDAGovernmentMapping">
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+      <End Role="InstallationConfig" EntitySet="InstallationConfig" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListItem_ListType" Association="SsepsIISynModel.Store.FK_ListItem_ListType">
+      <End Role="ListType" EntitySet="ListType" />
+      <End Role="ListItem" EntitySet="ListItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MDA_CONFIG_MdaGovernmentMapping" Association="SsepsIISynModel.Store.FK_MDA_CONFIG_MdaGovernmentMapping">
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+      <End Role="MDA_CONFIG" EntitySet="MDA_CONFIG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MdaGovernmentMapping_Government" Association="SsepsIISynModel.Store.FK_MdaGovernmentMapping_Government">
+      <End Role="Government" EntitySet="Government" />
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MdaGovernmentMapping_MdaStructure" Association="SsepsIISynModel.Store.FK_MdaGovernmentMapping_MdaStructure">
+      <End Role="MdaStructure" EntitySet="MdaStructure" />
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayItemMDAStructureMapping_MdaStructure" Association="SsepsIISynModel.Store.FK_PayItemMDAStructureMapping_MdaStructure">
+      <End Role="MdaStructure" EntitySet="MdaStructure" />
+      <End Role="PayItemMDAStructureMapping" EntitySet="PayItemMDAStructureMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PayItemMDAStructureMapping_PayItem" Association="SsepsIISynModel.Store.FK_PayItemMDAStructureMapping_PayItem">
+      <End Role="PayItem" EntitySet="PayItem" />
+      <End Role="PayItemMDAStructureMapping" EntitySet="PayItemMDAStructureMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemRolePermission_SystemPermission" Association="SsepsIISynModel.Store.FK_SystemRolePermission_SystemPermission">
+      <End Role="SystemPermission" EntitySet="SystemPermission" />
+      <End Role="SystemRolePermission" EntitySet="SystemRolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemRolePermission_SystemRole" Association="SsepsIISynModel.Store.FK_SystemRolePermission_SystemRole">
+      <End Role="SystemRole" EntitySet="SystemRole" />
+      <End Role="SystemRolePermission" EntitySet="SystemRolePermission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUser_SystemUser" Association="SsepsIISynModel.Store.FK_SystemUser_SystemUser">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="SystemUser" EntitySet="SystemUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUserMda_MdaGovernmentMapping" Association="SsepsIISynModel.Store.FK_SystemUserMda_MdaGovernmentMapping">
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+      <End Role="SystemUserMda" EntitySet="SystemUserMda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUserMda_SystemUser" Association="SsepsIISynModel.Store.FK_SystemUserMda_SystemUser">
+      <End Role="SystemUser" EntitySet="SystemUser" />
+      <End Role="SystemUserMda" EntitySet="SystemUserMda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUserRole_SystemRole" Association="SsepsIISynModel.Store.FK_SystemUserRole_SystemRole">
+      <End Role="SystemRole" EntitySet="SystemRole" />
+      <End Role="SystemUserRole" EntitySet="SystemUserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUserRole_SystemUser" Association="SsepsIISynModel.Store.FK_SystemUserRole_SystemUser">
+      <End Role="SystemUser" EntitySet="SystemUser" />
+      <End Role="SystemUserRole" EntitySet="SystemUserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUserSupervisedMda_MdaGovernmentMapping" Association="SsepsIISynModel.Store.FK_SystemUserSupervisedMda_MdaGovernmentMapping">
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+      <End Role="SystemUserSupervisedMda" EntitySet="SystemUserSupervisedMda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUserSupervisedMda_SystemUser" Association="SsepsIISynModel.Store.FK_SystemUserSupervisedMda_SystemUser">
+      <End Role="SystemUser" EntitySet="SystemUser" />
+      <End Role="SystemUserSupervisedMda" EntitySet="SystemUserSupervisedMda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferredEmployee_DirectorateListing" Association="SsepsIISynModel.Store.FK_TransferredEmployee_DirectorateListing">
+      <End Role="DirectorateListing" EntitySet="DirectorateListing" />
+      <End Role="TransferredEmployee" EntitySet="TransferredEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferredEmployee_Employee" Association="SsepsIISynModel.Store.FK_TransferredEmployee_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="TransferredEmployee" EntitySet="TransferredEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TransferredEmployee_MdaGovernmentMapping" Association="SsepsIISynModel.Store.FK_TransferredEmployee_MdaGovernmentMapping">
+      <End Role="MdaGovernmentMapping" EntitySet="MdaGovernmentMapping" />
+      <End Role="TransferredEmployee" EntitySet="TransferredEmployee" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BankBranch">
+    <Key>
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="BranchID" Type="int" Nullable="false" />
+    <Property Name="BranchCode" Type="varchar" MaxLength="50" />
+    <Property Name="BranchName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Address1" Type="varchar" MaxLength="50" />
+    <Property Name="Address2" Type="varchar" MaxLength="50" />
+    <Property Name="ContactPerson" Type="varchar" MaxLength="50" />
+    <Property Name="TelephoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="BankID" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="datetime" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="DirectorateListing">
+    <Key>
+      <PropertyRef Name="directorateID" />
+    </Key>
+    <Property Name="directorateID" Type="int" Nullable="false" />
+    <Property Name="financeDirectorateID" Type="int" />
+    <Property Name="directorateCode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="directorateName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="mdaID" Type="int" Nullable="false" />
+    <Property Name="directorateLocation" Type="varchar" MaxLength="100" />
+    <Property Name="directorateType" Type="int" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="datetime" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="prefix" Type="varchar" MaxLength="50" />
+    <Property Name="surName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="givenName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="otherNames" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="gender" Type="varchar" MaxLength="10" />
+    <Property Name="dateofBirth" Type="date" Nullable="false" />
+    <Property Name="maritalStatus" Type="int" />
+    <Property Name="EmployeePIN" Type="varchar" MaxLength="50" />
+    <Property Name="NationalID" Type="varchar" MaxLength="50" />
+    <Property Name="Nationality" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="hrmisCode" Type="varchar" MaxLength="25" />
+    <Property Name="dateofAppointment" Type="date" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="phoneMobile" Type="varchar" MaxLength="50" />
+    <Property Name="phoneMobile2" Type="varchar" MaxLength="50" />
+    <Property Name="phoneMobile3" Type="varchar" MaxLength="50" />
+    <Property Name="home_StateID" Type="int" />
+    <Property Name="address" Type="varchar" MaxLength="500" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="dateUpdated" Type="date" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+    <Property Name="lastPromotionDate" Type="date" />
+    <Property Name="lastIncrementDate" Type="date" />
+  </EntityType>
+  <EntityType Name="EmployeeAssignment">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="evidenceReferenceNo" Type="int" />
+    <Property Name="employementTermID" Type="int" Nullable="false" />
+    <Property Name="governmentLevel" Type="int" />
+    <Property Name="fundSource" Type="int" />
+    <Property Name="dateStart" Type="date" Nullable="false" />
+    <Property Name="jobKey" Type="varchar" MaxLength="200" />
+    <Property Name="jobID" Type="int" />
+    <Property Name="JobTitleNominalRoll" Type="varchar" MaxLength="200" />
+    <Property Name="jobTitleAgainst" Type="varchar" MaxLength="200" />
+    <Property Name="payScaleID" Type="int" Nullable="false" />
+    <Property Name="jobGrade" Type="int" Nullable="false" />
+    <Property Name="jobGradeClassification" Type="int" Nullable="false" />
+    <Property Name="paySegment" Type="int" Nullable="false" />
+    <Property Name="payStatusID" Type="int" Nullable="false" />
+    <Property Name="IsPensionable" Type="bit" Nullable="false" />
+    <Property Name="mdaID" Type="int" Nullable="false" />
+    <Property Name="directorateID" Type="int" Nullable="false" />
+    <Property Name="job_worklocation_StateID" Type="int" />
+    <Property Name="FileIndex" Type="varchar" MaxLength="50" />
+    <Property Name="payType" Type="int" Nullable="false" />
+    <Property Name="payMethod" Type="int" Nullable="false" />
+    <Property Name="payFrequency" Type="int" Nullable="false" />
+    <Property Name="authorisedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="authorisedOn" Type="date" Nullable="false" />
+    <Property Name="eventId" Type="int" Nullable="false" />
+    <Property Name="workflowComplete" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="dateUpdated" Type="date" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="EmployeeAssignmentHistory">
+    <Key>
+      <PropertyRef Name="EmployeeAssignmentHistoryId" />
+    </Key>
+    <Property Name="EmployeeAssignmentHistoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="evidenceReferenceNo" Type="int" />
+    <Property Name="employementTermID" Type="int" Nullable="false" />
+    <Property Name="governmentLevel" Type="int" />
+    <Property Name="fundSource" Type="int" Nullable="false" />
+    <Property Name="dateStart" Type="date" Nullable="false" />
+    <Property Name="jobKey" Type="varchar" MaxLength="200" />
+    <Property Name="jobID" Type="int" />
+    <Property Name="jobTitleNominalRoll" Type="varchar" MaxLength="200" />
+    <Property Name="jobTitleAgainst" Type="varchar" MaxLength="200" />
+    <Property Name="payScaleID" Type="int" Nullable="false" />
+    <Property Name="jobGrade" Type="int" Nullable="false" />
+    <Property Name="jobGradeClassification" Type="int" Nullable="false" />
+    <Property Name="paySegment" Type="int" Nullable="false" />
+    <Property Name="payStatusID" Type="int" Nullable="false" />
+    <Property Name="IsPensionable" Type="bit" Nullable="false" />
+    <Property Name="mdaID" Type="int" Nullable="false" />
+    <Property Name="directorateID" Type="int" Nullable="false" />
+    <Property Name="job_worklocation_StateID" Type="int" />
+    <Property Name="FileIndex" Type="varchar" MaxLength="50" />
+    <Property Name="payType" Type="int" Nullable="false" />
+    <Property Name="payMethod" Type="int" Nullable="false" />
+    <Property Name="payFrequency" Type="int" Nullable="false" />
+    <Property Name="authorisedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="authorisedOn" Type="date" Nullable="false" />
+    <Property Name="eventId" Type="int" Nullable="false" />
+    <Property Name="workflowComplete" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="dateUpdated" Type="date" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="EmployeeBankAccount">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="BranchID" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="BranchID" Type="int" Nullable="false" />
+    <Property Name="AccountNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="AccountName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="datetime" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="EmployeeEvent">
+    <Key>
+      <PropertyRef Name="employeeEventID" />
+    </Key>
+    <Property Name="employeeEventID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="EventID" Type="int" Nullable="false" />
+    <Property Name="EventTypeID" Type="int" />
+    <Property Name="EventDescription" Type="varchar" MaxLength="1000" />
+    <Property Name="EffectOnSalary" Type="int" Nullable="false" />
+    <Property Name="EventDate" Type="date" Nullable="false" />
+    <Property Name="StartPeriod" Type="int" />
+    <Property Name="EndPeriod" Type="int" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="payItemID" Type="int" />
+    <Property Name="jobKey" Type="varchar" MaxLength="200" />
+    <Property Name="ActingGrade" Type="int" />
+    <Property Name="authorizedBy" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="authorizedOn" Type="date" Nullable="false" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="date" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="EmployeePayItem">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="payItemID" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="payItemID" Type="int" Nullable="false" />
+    <Property Name="startPeriod" Type="int" />
+    <Property Name="endPeriod" Type="int" />
+    <Property Name="paramValue" Type="float" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="dateUpdated" Type="date" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="EmployeePayroll">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="payrollPeriod" Type="int" Nullable="false" />
+    <Property Name="mdaID" Type="int" Nullable="false" />
+    <Property Name="directorateID" Type="int" Nullable="false" />
+    <Property Name="payrollDate" Type="datetime" Nullable="false" />
+    <Property Name="payItemsXML" Type="xml" />
+    <Property Name="grossPay" Type="decimal" Scale="2" />
+    <Property Name="netPay" Type="decimal" Scale="2" />
+    <Property Name="payrollPreparedBy" Type="varchar" MaxLength="100" />
+    <Property Name="payrollVerifiedBy" Type="varchar" MaxLength="100" />
+    <Property Name="payrollApprovedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="dateUpdated" Type="date" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EmployeePayrollHistory">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="payrollPeriod" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="payrollPeriod" Type="int" Nullable="false" />
+    <Property Name="mdaID" Type="int" Nullable="false" />
+    <Property Name="directorateID" Type="int" Nullable="false" />
+    <Property Name="payrollDate" Type="datetime" Nullable="false" />
+    <Property Name="payItemsXML" Type="xml" />
+    <Property Name="grossPay" Type="decimal" Scale="2" />
+    <Property Name="netPay" Type="decimal" Scale="2" />
+    <Property Name="payrollPreparedBy" Type="varchar" MaxLength="100" />
+    <Property Name="payrollVerifiedBy" Type="varchar" MaxLength="100" />
+    <Property Name="payrollApprovedBy" Type="varchar" MaxLength="100" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="datePosted" Type="date" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="whoPosted" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Government">
+    <Key>
+      <PropertyRef Name="governmentID" />
+    </Key>
+    <Property Name="governmentID" Type="int" Nullable="false" />
+    <Property Name="governmentCode" Type="varchar" MaxLength="10" />
+    <Property Name="governmentName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="governmentLevelID" Type="int" Nullable="false" />
+    <Property Name="linkToID" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="datetime" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="GovernmentLogo" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="InstallationConfig">
+    <Key>
+      <PropertyRef Name="installationId" />
+    </Key>
+    <Property Name="installationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="installation_key" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="installation_value" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="installation_token" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="mdaId" Type="int" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="dateUpdated" Type="date" />
+  </EntityType>
+  <EntityType Name="ListItem">
+    <Key>
+      <PropertyRef Name="listID" />
+    </Key>
+    <Property Name="listID" Type="int" Nullable="false" />
+    <Property Name="listTypeID" Type="int" Nullable="false" />
+    <Property Name="listText" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="listValue" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="dateUpdated" Type="datetime" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ListType">
+    <Key>
+      <PropertyRef Name="listtypeID" />
+    </Key>
+    <Property Name="listtypeID" Type="int" Nullable="false" />
+    <Property Name="listTypeText" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="dateUpdated" Type="date" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Level" Type="int" Nullable="false" />
+    <Property Name="Message" Type="varchar" Nullable="false" MaxLength="4000" />
+    <Property Name="Exception" Type="varchar" MaxLength="2000" />
+    <Property Name="WhoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MDA_CONFIG">
+    <Key>
+      <PropertyRef Name="MDA_CONFIG_ID" />
+    </Key>
+    <Property Name="MDA_CONFIG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MDAID" Type="int" Nullable="false" />
+    <Property Name="CONFIG_KEY" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CONFIG_VALUE" Type="varchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="MdaGovernmentMapping">
+    <Key>
+      <PropertyRef Name="mdaID" />
+    </Key>
+    <Property Name="mdaID" Type="int" Nullable="false" />
+    <Property Name="mdaStructureID" Type="int" Nullable="false" />
+    <Property Name="governmentID" Type="int" Nullable="false" />
+    <Property Name="mdaCode" Type="varchar" MaxLength="50" />
+    <Property Name="chartOfAccountCode" Type="varchar" MaxLength="50" />
+    <Property Name="mdaName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="AccountingOfficerName" Type="varchar" MaxLength="50" />
+    <Property Name="AccountingOfficerMobileNumber" Type="varchar" MaxLength="50" />
+    <Property Name="PayrollManagerName" Type="varchar" MaxLength="50" />
+    <Property Name="PayrollManagerMobileNumber" Type="varchar" MaxLength="50" />
+    <Property Name="mdaAddress" Type="varchar" MaxLength="500" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="datetime" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MdaStructure">
+    <Key>
+      <PropertyRef Name="mdaStructureID" />
+    </Key>
+    <Property Name="mdaStructureID" Type="int" Nullable="false" />
+    <Property Name="mdaStructureName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="mdaStructureType" Type="int" />
+    <Property Name="sectorID" Type="int" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="datetime" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PayItem">
+    <Key>
+      <PropertyRef Name="payItemID" />
+    </Key>
+    <Property Name="payItemID" Type="int" Nullable="false" />
+    <Property Name="chartofAccountCode" Type="varchar" MaxLength="20" />
+    <Property Name="payItemOrder" Type="int" />
+    <Property Name="payItemCode" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="payItemName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="payItemDescription" Type="varchar" MaxLength="200" />
+    <Property Name="payItemType" Type="char" MaxLength="1" />
+    <Property Name="IsComputed" Type="bit" Nullable="false" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="IsRecurring" Type="bit" Nullable="false" />
+    <Property Name="IsPensionable" Type="bit" Nullable="false" />
+    <Property Name="IsTaxable" Type="bit" Nullable="false" />
+    <Property Name="IsMandatory" Type="bit" Nullable="false" />
+    <Property Name="dateCreated" Type="date" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="date" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefID" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="PayItemMDAStructureMapping">
+    <Key>
+      <PropertyRef Name="PayitemID" />
+      <PropertyRef Name="mdaStructureID" />
+    </Key>
+    <Property Name="PayitemID" Type="int" Nullable="false" />
+    <Property Name="mdaStructureID" Type="int" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="dateUpdated" Type="datetime" />
+    <Property Name="whoUpdated" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SITE_CONFIG">
+    <Key>
+      <PropertyRef Name="SITE_CONFIG_ID" />
+    </Key>
+    <Property Name="SITE_CONFIG_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CONFIG_KEY" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CONFIG_VALUE" Type="varchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="SSEPS_CONFIG">
+    <Key>
+      <PropertyRef Name="CONFIG_KEY" />
+    </Key>
+    <Property Name="CONFIG_KEY" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CONFIG_VALUE" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="CONFIG_TYPE" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="SystemPermission">
+    <Key>
+      <PropertyRef Name="SystemPermissionId" />
+    </Key>
+    <Property Name="SystemPermissionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="SystemName" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Category" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="WhoCreated" Type="varchar" MaxLength="100" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="WhoUpdated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SystemRole">
+    <Key>
+      <PropertyRef Name="SystemRoleId" />
+    </Key>
+    <Property Name="SystemRoleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="SystemName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="WhoCreated" Type="varchar" MaxLength="100" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="WhoModified" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SystemRolePermission">
+    <Key>
+      <PropertyRef Name="SystemRolePermissionId" />
+    </Key>
+    <Property Name="SystemRolePermissionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SystemRoleId" Type="int" Nullable="false" />
+    <Property Name="SystemPermissionId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="WhoCreated" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SystemUser">
+    <Key>
+      <PropertyRef Name="SystemUserId" />
+    </Key>
+    <Property Name="SystemUserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Surname" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="GivenName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="OtherNames" Type="varchar" MaxLength="100" />
+    <Property Name="EmployeeId" Type="bigint" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Locked" Type="bit" Nullable="false" />
+    <Property Name="LastIpAddress" Type="nvarchar" MaxLength="40" />
+    <Property Name="UserLoginCount" Type="int" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="WhoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DateModified" Type="datetime" />
+    <Property Name="WhoModified" Type="varchar" MaxLength="50" />
+    <Property Name="LogRefId" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SystemUserMda">
+    <Key>
+      <PropertyRef Name="SystemUserId" />
+      <PropertyRef Name="MdaId" />
+    </Key>
+    <Property Name="SystemUserId" Type="int" Nullable="false" />
+    <Property Name="MdaId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="WhoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SystemUserRole">
+    <Key>
+      <PropertyRef Name="SystemUserId" />
+      <PropertyRef Name="SystemRoleId" />
+    </Key>
+    <Property Name="SystemUserId" Type="int" Nullable="false" />
+    <Property Name="SystemRoleId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="WhoCreated" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SystemUserSupervisedMda">
+    <Key>
+      <PropertyRef Name="SystemUserId" />
+      <PropertyRef Name="MdaId" />
+    </Key>
+    <Property Name="SystemUserId" Type="int" Nullable="false" />
+    <Property Name="MdaId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="WhoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TransData">
+    <Key>
+      <PropertyRef Name="RowGuid" />
+    </Key>
+    <Property Name="RowGuid" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ActionType" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="TableName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TransDate" Type="date" Nullable="false" />
+    <Property Name="OldValues" Type="xml" />
+    <Property Name="NewValues" Type="xml" Nullable="false" />
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="LogRefID" Type="varchar" Nullable="false" MaxLength="25" />
+    <Property Name="SyncPeriod" Type="int" Nullable="false" />
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MdaId" Type="int" Nullable="false" />
+    <Property Name="state" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransferredEmployee">
+    <Key>
+      <PropertyRef Name="TransferredEmployeeId" />
+    </Key>
+    <Property Name="TransferredEmployeeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="TransferReason" Type="text" />
+    <Property Name="IsPermanent" Type="bit" Nullable="false" />
+    <Property Name="TransferXML" Type="xml" Nullable="false" />
+    <Property Name="TransferDirection" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="FromDirectorateId" Type="int" />
+    <Property Name="FromGrade" Type="int" />
+    <Property Name="ToGrade" Type="int" />
+    <Property Name="ToMDAID" Type="int" />
+    <Property Name="AuthorizedBy" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="AuthorizedOn" Type="date" Nullable="false" />
+    <Property Name="dateCreated" Type="datetime" Nullable="false" />
+    <Property Name="whoCreated" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'SSEPS.dbo.State' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateID" />
+      <PropertyRef Name="StateName" />
+      <PropertyRef Name="Government" />
+    </Key>
+    <Property Name="StateID" Type="int" Nullable="false" />
+    <Property Name="StateName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Government" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_DirectorateListing_MdaGovernmentMapping">
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="1" />
+    <End Role="DirectorateListing" Type="SsepsIISynModel.Store.DirectorateListing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaID" />
+      </Principal>
+      <Dependent Role="DirectorateListing">
+        <PropertyRef Name="mdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeAssignment_Employee">
+    <End Role="Employee" Type="SsepsIISynModel.Store.Employee" Multiplicity="1" />
+    <End Role="EmployeeAssignment" Type="SsepsIISynModel.Store.EmployeeAssignment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeAssignment">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeAssignment_MDAGovernmentMapping">
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="1" />
+    <End Role="EmployeeAssignment" Type="SsepsIISynModel.Store.EmployeeAssignment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaID" />
+      </Principal>
+      <Dependent Role="EmployeeAssignment">
+        <PropertyRef Name="mdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeBankAccount_BankBranch">
+    <End Role="BankBranch" Type="SsepsIISynModel.Store.BankBranch" Multiplicity="1" />
+    <End Role="EmployeeBankAccount" Type="SsepsIISynModel.Store.EmployeeBankAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BankBranch">
+        <PropertyRef Name="BranchID" />
+      </Principal>
+      <Dependent Role="EmployeeBankAccount">
+        <PropertyRef Name="BranchID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeBankAccount_Employee">
+    <End Role="Employee" Type="SsepsIISynModel.Store.Employee" Multiplicity="1" />
+    <End Role="EmployeeBankAccount" Type="SsepsIISynModel.Store.EmployeeBankAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeBankAccount">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeEvent_EmployeeAssignment">
+    <End Role="EmployeeAssignment" Type="SsepsIISynModel.Store.EmployeeAssignment" Multiplicity="1" />
+    <End Role="EmployeeEvent" Type="SsepsIISynModel.Store.EmployeeEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeAssignment">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeEvent">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeEvent_PayItem">
+    <End Role="PayItem" Type="SsepsIISynModel.Store.PayItem" Multiplicity="0..1" />
+    <End Role="EmployeeEvent" Type="SsepsIISynModel.Store.EmployeeEvent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayItem">
+        <PropertyRef Name="payItemID" />
+      </Principal>
+      <Dependent Role="EmployeeEvent">
+        <PropertyRef Name="payItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePayItem_Employee">
+    <End Role="Employee" Type="SsepsIISynModel.Store.Employee" Multiplicity="1" />
+    <End Role="EmployeePayItem" Type="SsepsIISynModel.Store.EmployeePayItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeePayItem">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePayItem_PayItem">
+    <End Role="PayItem" Type="SsepsIISynModel.Store.PayItem" Multiplicity="1" />
+    <End Role="EmployeePayItem" Type="SsepsIISynModel.Store.EmployeePayItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayItem">
+        <PropertyRef Name="payItemID" />
+      </Principal>
+      <Dependent Role="EmployeePayItem">
+        <PropertyRef Name="payItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePayroll_Employee">
+    <End Role="Employee" Type="SsepsIISynModel.Store.Employee" Multiplicity="1" />
+    <End Role="EmployeePayroll" Type="SsepsIISynModel.Store.EmployeePayroll" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeePayroll">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePayrollHistory_MdaGovernmentMapping">
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="1" />
+    <End Role="EmployeePayrollHistory" Type="SsepsIISynModel.Store.EmployeePayrollHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaID" />
+      </Principal>
+      <Dependent Role="EmployeePayrollHistory">
+        <PropertyRef Name="mdaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Government_Government">
+    <End Role="Government" Type="SsepsIISynModel.Store.Government" Multiplicity="1" />
+    <End Role="Government1" Type="SsepsIISynModel.Store.Government" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Government">
+        <PropertyRef Name="governmentID" />
+      </Principal>
+      <Dependent Role="Government1">
+        <PropertyRef Name="linkToID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstallationConfig_MDAGovernmentMapping">
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="1" />
+    <End Role="InstallationConfig" Type="SsepsIISynModel.Store.InstallationConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaID" />
+      </Principal>
+      <Dependent Role="InstallationConfig">
+        <PropertyRef Name="mdaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListItem_ListType">
+    <End Role="ListType" Type="SsepsIISynModel.Store.ListType" Multiplicity="1" />
+    <End Role="ListItem" Type="SsepsIISynModel.Store.ListItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListType">
+        <PropertyRef Name="listtypeID" />
+      </Principal>
+      <Dependent Role="ListItem">
+        <PropertyRef Name="listTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MDA_CONFIG_MdaGovernmentMapping">
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="1" />
+    <End Role="MDA_CONFIG" Type="SsepsIISynModel.Store.MDA_CONFIG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaID" />
+      </Principal>
+      <Dependent Role="MDA_CONFIG">
+        <PropertyRef Name="MDAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MdaGovernmentMapping_Government">
+    <End Role="Government" Type="SsepsIISynModel.Store.Government" Multiplicity="1" />
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Government">
+        <PropertyRef Name="governmentID" />
+      </Principal>
+      <Dependent Role="MdaGovernmentMapping">
+        <PropertyRef Name="governmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MdaGovernmentMapping_MdaStructure">
+    <End Role="MdaStructure" Type="SsepsIISynModel.Store.MdaStructure" Multiplicity="1" />
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaStructure">
+        <PropertyRef Name="mdaStructureID" />
+      </Principal>
+      <Dependent Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaStructureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayItemMDAStructureMapping_MdaStructure">
+    <End Role="MdaStructure" Type="SsepsIISynModel.Store.MdaStructure" Multiplicity="1" />
+    <End Role="PayItemMDAStructureMapping" Type="SsepsIISynModel.Store.PayItemMDAStructureMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaStructure">
+        <PropertyRef Name="mdaStructureID" />
+      </Principal>
+      <Dependent Role="PayItemMDAStructureMapping">
+        <PropertyRef Name="mdaStructureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PayItemMDAStructureMapping_PayItem">
+    <End Role="PayItem" Type="SsepsIISynModel.Store.PayItem" Multiplicity="1" />
+    <End Role="PayItemMDAStructureMapping" Type="SsepsIISynModel.Store.PayItemMDAStructureMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PayItem">
+        <PropertyRef Name="payItemID" />
+      </Principal>
+      <Dependent Role="PayItemMDAStructureMapping">
+        <PropertyRef Name="PayitemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemRolePermission_SystemPermission">
+    <End Role="SystemPermission" Type="SsepsIISynModel.Store.SystemPermission" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SystemRolePermission" Type="SsepsIISynModel.Store.SystemRolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemPermission">
+        <PropertyRef Name="SystemPermissionId" />
+      </Principal>
+      <Dependent Role="SystemRolePermission">
+        <PropertyRef Name="SystemPermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemRolePermission_SystemRole">
+    <End Role="SystemRole" Type="SsepsIISynModel.Store.SystemRole" Multiplicity="1" />
+    <End Role="SystemRolePermission" Type="SsepsIISynModel.Store.SystemRolePermission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemRole">
+        <PropertyRef Name="SystemRoleId" />
+      </Principal>
+      <Dependent Role="SystemRolePermission">
+        <PropertyRef Name="SystemRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUser_SystemUser">
+    <End Role="Employee" Type="SsepsIISynModel.Store.Employee" Multiplicity="0..1" />
+    <End Role="SystemUser" Type="SsepsIISynModel.Store.SystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="SystemUser">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUserMda_MdaGovernmentMapping">
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SystemUserMda" Type="SsepsIISynModel.Store.SystemUserMda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaID" />
+      </Principal>
+      <Dependent Role="SystemUserMda">
+        <PropertyRef Name="MdaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUserMda_SystemUser">
+    <End Role="SystemUser" Type="SsepsIISynModel.Store.SystemUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SystemUserMda" Type="SsepsIISynModel.Store.SystemUserMda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUser">
+        <PropertyRef Name="SystemUserId" />
+      </Principal>
+      <Dependent Role="SystemUserMda">
+        <PropertyRef Name="SystemUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUserRole_SystemRole">
+    <End Role="SystemRole" Type="SsepsIISynModel.Store.SystemRole" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SystemUserRole" Type="SsepsIISynModel.Store.SystemUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemRole">
+        <PropertyRef Name="SystemRoleId" />
+      </Principal>
+      <Dependent Role="SystemUserRole">
+        <PropertyRef Name="SystemRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUserRole_SystemUser">
+    <End Role="SystemUser" Type="SsepsIISynModel.Store.SystemUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SystemUserRole" Type="SsepsIISynModel.Store.SystemUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUser">
+        <PropertyRef Name="SystemUserId" />
+      </Principal>
+      <Dependent Role="SystemUserRole">
+        <PropertyRef Name="SystemUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUserSupervisedMda_MdaGovernmentMapping">
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SystemUserSupervisedMda" Type="SsepsIISynModel.Store.SystemUserSupervisedMda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaID" />
+      </Principal>
+      <Dependent Role="SystemUserSupervisedMda">
+        <PropertyRef Name="MdaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUserSupervisedMda_SystemUser">
+    <End Role="SystemUser" Type="SsepsIISynModel.Store.SystemUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SystemUserSupervisedMda" Type="SsepsIISynModel.Store.SystemUserSupervisedMda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SystemUser">
+        <PropertyRef Name="SystemUserId" />
+      </Principal>
+      <Dependent Role="SystemUserSupervisedMda">
+        <PropertyRef Name="SystemUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferredEmployee_DirectorateListing">
+    <End Role="DirectorateListing" Type="SsepsIISynModel.Store.DirectorateListing" Multiplicity="0..1" />
+    <End Role="TransferredEmployee" Type="SsepsIISynModel.Store.TransferredEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DirectorateListing">
+        <PropertyRef Name="directorateID" />
+      </Principal>
+      <Dependent Role="TransferredEmployee">
+        <PropertyRef Name="FromDirectorateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferredEmployee_Employee">
+    <End Role="Employee" Type="SsepsIISynModel.Store.Employee" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TransferredEmployee" Type="SsepsIISynModel.Store.TransferredEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="TransferredEmployee">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TransferredEmployee_MdaGovernmentMapping">
+    <End Role="MdaGovernmentMapping" Type="SsepsIISynModel.Store.MdaGovernmentMapping" Multiplicity="0..1" />
+    <End Role="TransferredEmployee" Type="SsepsIISynModel.Store.TransferredEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MdaGovernmentMapping">
+        <PropertyRef Name="mdaID" />
+      </Principal>
+      <Dependent Role="TransferredEmployee">
+        <PropertyRef Name="ToMDAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
