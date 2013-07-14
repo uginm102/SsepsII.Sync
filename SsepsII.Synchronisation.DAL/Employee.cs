@@ -16,10 +16,9 @@ namespace SsepsII.Synchronisation.DAL
     {
         public Employee()
         {
+            this.EmployeeBankAccounts = new HashSet<EmployeeBankAccount>();
             this.EmployeePayItems = new HashSet<EmployeePayItem>();
             this.SystemUsers = new HashSet<SystemUser>();
-            this.TransferredEmployees = new HashSet<TransferredEmployee>();
-            this.EmployeeBankAccounts = new HashSet<EmployeeBankAccount>();
         }
     
         public long EmployeeID { get; set; }
@@ -51,10 +50,10 @@ namespace SsepsII.Synchronisation.DAL
         public Nullable<System.DateTime> lastIncrementDate { get; set; }
     
         public virtual EmployeeAssignment EmployeeAssignment { get; set; }
+        public virtual ICollection<EmployeeBankAccount> EmployeeBankAccounts { get; set; }
         public virtual ICollection<EmployeePayItem> EmployeePayItems { get; set; }
         public virtual EmployeePayroll EmployeePayroll { get; set; }
+        public virtual EmployeePhoto EmployeePhoto { get; set; }
         public virtual ICollection<SystemUser> SystemUsers { get; set; }
-        public virtual ICollection<TransferredEmployee> TransferredEmployees { get; set; }
-        public virtual ICollection<EmployeeBankAccount> EmployeeBankAccounts { get; set; }
     }
 }

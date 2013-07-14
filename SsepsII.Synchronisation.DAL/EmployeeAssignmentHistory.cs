@@ -41,7 +41,7 @@ namespace SsepsII.Synchronisation.DAL
         public string authorisedBy { get; set; }
         public System.DateTime authorisedOn { get; set; }
         public int eventId { get; set; }
-        public int workflowComplete { get; set; }
+        public int assignmentState { get; set; }
         public System.DateTime dateCreated { get; set; }
         public Nullable<System.DateTime> dateUpdated { get; set; }
         public string whoCreated { get; set; }

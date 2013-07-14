@@ -12,13 +12,10 @@ namespace SsepsII.Synchronisation.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Log
+    public partial class PayGrade
     {
-        public int Id { get; set; }
-        public int Level { get; set; }
-        public string Message { get; set; }
-        public string Exception { get; set; }
-        public string WhoCreated { get; set; }
-        public System.DateTime DateCreated { get; set; }
+        public int Grade { get; set; }
+        public bool IsClassified { get; set; }
+        public bool IsUnclassified { get; set; }
     }
 }

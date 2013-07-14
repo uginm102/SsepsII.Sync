@@ -18,6 +18,7 @@ namespace SsepsII.Synchronisation.DAL
         {
             this.Government1 = new HashSet<Government>();
             this.MdaGovernmentMappings = new HashSet<MdaGovernmentMapping>();
+            this.PayItemGovernmentMappings = new HashSet<PayItemGovernmentMapping>();
         }
     
         public int governmentID { get; set; }
@@ -34,5 +35,6 @@ namespace SsepsII.Synchronisation.DAL
         public virtual ICollection<Government> Government1 { get; set; }
         public virtual Government Government2 { get; set; }
         public virtual ICollection<MdaGovernmentMapping> MdaGovernmentMappings { get; set; }
+        public virtual ICollection<PayItemGovernmentMapping> PayItemGovernmentMappings { get; set; }
     }
 }

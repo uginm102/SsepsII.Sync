@@ -14,6 +14,11 @@ namespace SsepsII.Synchronisation.DAL
     
     public partial class ListItem
     {
+        public ListItem()
+        {
+            this.ArrearsAssignments = new HashSet<ArrearsAssignment>();
+        }
+    
         public int listID { get; set; }
         public int listTypeID { get; set; }
         public string listText { get; set; }
@@ -23,6 +28,7 @@ namespace SsepsII.Synchronisation.DAL
         public string whoCreated { get; set; }
         public string whoUpdated { get; set; }
     
+        public virtual ICollection<ArrearsAssignment> ArrearsAssignments { get; set; }
         public virtual ListType ListType { get; set; }
     }
 }

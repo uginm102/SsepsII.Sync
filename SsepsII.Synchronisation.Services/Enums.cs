@@ -38,4 +38,14 @@ namespace SsepsII.Synchronisation.Services
         SyncedConsolidateOnly = 4,
         Exported = 5
     }
+
+    public enum TransferState : int
+    {
+        SourceCreatedTransfer = 0,
+        MoLPSApproved = 1,
+        MoLPSRejected = 2,
+        EnrolledDestination = 3,
+        RejectedDestination = 4
+
+    }
 }

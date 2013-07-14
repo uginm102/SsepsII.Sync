@@ -12,7 +12,7 @@ namespace SsepsII.Synchronisation.DAL
         {
             get
             {
-                return new XElement("EmployeePayrollHistory",
+                return new XElement("Row",
                     new XElement("EmployeeID", EmployeeID),
                     new XElement("payrollPeriod", payrollPeriod),
                     new XElement("mdaID", mdaID),

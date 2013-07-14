@@ -3,6 +3,6 @@ C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchroni
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SsepsII.Synchronisation.DAL\bin\Debug\SsepsII.Synchronisation.DAL.pdb
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SsepsII.Synchronisation.DAL\bin\Debug\EntityFramework.dll
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SsepsII.Synchronisation.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SsepsII.Synchronisation.DAL\obj\Debug\SsepsII.Synchronisation.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SsepsII.Synchronisation.DAL\obj\Debug\SsepsII.Synchronisation.DAL.dll
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SsepsII.Synchronisation.DAL\obj\Debug\SsepsII.Synchronisation.DAL.pdb
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SsepsII.Synchronisation.DAL\obj\Debug\SsepsII.Synchronisation.DAL.csprojResolveAssemblyReference.cache

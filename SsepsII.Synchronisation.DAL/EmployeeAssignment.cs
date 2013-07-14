@@ -16,7 +16,12 @@ namespace SsepsII.Synchronisation.DAL
     {
         public EmployeeAssignment()
         {
+            this.EmployeeAttendances = new HashSet<EmployeeAttendance>();
             this.EmployeeEvents = new HashSet<EmployeeEvent>();
+            this.EmployeeOvertimes = new HashSet<EmployeeOvertime>();
+            this.EmployeeOvertimeHistories = new HashSet<EmployeeOvertimeHistory>();
+            this.SalaryAdvances = new HashSet<SalaryAdvance>();
+            this.SalaryArrears = new HashSet<SalaryArrear>();
         }
     
         public long EmployeeID { get; set; }
@@ -45,7 +50,7 @@ namespace SsepsII.Synchronisation.DAL
         public string authorisedBy { get; set; }
         public System.DateTime authorisedOn { get; set; }
         public int eventId { get; set; }
-        public int workflowComplete { get; set; }
+        public int assignmentState { get; set; }
         public System.DateTime dateCreated { get; set; }
         public Nullable<System.DateTime> dateUpdated { get; set; }
         public string whoCreated { get; set; }
@@ -54,6 +59,11 @@ namespace SsepsII.Synchronisation.DAL
     
         public virtual Employee Employee { get; set; }
         public virtual MdaGovernmentMapping MdaGovernmentMapping { get; set; }
+        public virtual ICollection<EmployeeAttendance> EmployeeAttendances { get; set; }
         public virtual ICollection<EmployeeEvent> EmployeeEvents { get; set; }
+        public virtual ICollection<EmployeeOvertime> EmployeeOvertimes { get; set; }
+        public virtual ICollection<EmployeeOvertimeHistory> EmployeeOvertimeHistories { get; set; }
+        public virtual ICollection<SalaryAdvance> SalaryAdvances { get; set; }
+        public virtual ICollection<SalaryArrear> SalaryArrears { get; set; }
     }
 }

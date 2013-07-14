@@ -46,7 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrearsAssignment.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bank.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="BankBranch.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Budget.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DirectorateListing.cs">
@@ -58,13 +67,31 @@
     <Compile Include="EmployeeAssignment.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeAssignmentEvidence.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeAssignmentHistory.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeAttendance.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeAttendanceHistory.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EmployeeBankAccount.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EmployeeEvent.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEventHistory.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeOvertime.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeOvertimeHistory.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="EmployeePayItem.cs">
@@ -76,11 +103,23 @@
     <Compile Include="EmployeePayrollHistory.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeePhoto.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityDataReader.cs" />
+    <Compile Include="FinanceDirectorateListing.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Government.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="InstallationConfig.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Job1.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ListItem.cs">
@@ -89,16 +128,22 @@
     <Compile Include="ListType.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Log.cs">
-      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="MdaGovernmentMapping.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MdaStructure.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MdaStructurePayScaleMapping.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MDA_CONFIG.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NominalRoll.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NominalRollHistory.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Partial Classes\EmployeePayrollHistory.cs" />
@@ -110,13 +155,43 @@
     <Compile Include="Partial Classes\SystemUser.cs" />
     <Compile Include="Partial Classes\TransData.cs" />
     <Compile Include="Partial Classes\TransferredEmployee.cs" />
+    <Compile Include="PayGrade.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PayItem.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayItemGovernmentMapping.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayItemGradeMapping.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PayItemMDAStructureMapping.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="PayScale.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayStatusChange.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryAdvance.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalaryAdvanceHistory.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalaryArrear.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalaryArrearsHistory.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sector.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SITE_CONFIG.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
@@ -135,10 +210,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SsepsIISynModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="SSEPSRule.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SSEPS_CONFIG.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SSEPS_Organized_Forces.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="State.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="SystemPermission.cs">
@@ -166,6 +250,15 @@
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TransferredEmployee.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransLog.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WHTPayrollHistory.cs">
+      <DependentUpon>SsepsIISynModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WHTPayrollHistoryTemp.cs">
       <DependentUpon>SsepsIISynModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

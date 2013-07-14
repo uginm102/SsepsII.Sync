@@ -17,6 +17,7 @@ namespace SsepsII.Synchronisation.DAL
         public MdaStructure()
         {
             this.MdaGovernmentMappings = new HashSet<MdaGovernmentMapping>();
+            this.MdaStructurePayScaleMappings = new HashSet<MdaStructurePayScaleMapping>();
             this.PayItemMDAStructureMappings = new HashSet<PayItemMDAStructureMapping>();
         }
     
@@ -30,6 +31,8 @@ namespace SsepsII.Synchronisation.DAL
         public string whoUpdated { get; set; }
     
         public virtual ICollection<MdaGovernmentMapping> MdaGovernmentMappings { get; set; }
+        public virtual Sector Sector { get; set; }
+        public virtual ICollection<MdaStructurePayScaleMapping> MdaStructurePayScaleMappings { get; set; }
         public virtual ICollection<PayItemMDAStructureMapping> PayItemMDAStructureMappings { get; set; }
     }
 }

@@ -41,8 +41,6 @@ namespace SSEPS_II.Synchronisation
             {
                 if (cmbGovernmentLevel.SelectedValue != null && !(cmbGovernmentLevel.SelectedValue is ListItem))
                 {
-                    var testOne = cmbGovernmentLevel.SelectedValue;
-                    var testTwo = cmbGovernmentLevel.SelectedItem;
                     cmbGovernment.DataSource = _mdaServices.GetGovernmentsByLevel((int)cmbGovernmentLevel.SelectedValue);
                     cmbGovernment.DisplayMember = "governmentName";
                     cmbGovernment.ValueMember = "governmentID";
@@ -94,11 +92,13 @@ namespace SSEPS_II.Synchronisation
 
         private void cmbGovernmentLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbGovernment.DataSource = null;
             LoadGovernment();
         }
 
         private void cmbGovernment_SelectedIndexChanged(object sender, EventArgs e)
         {
+            _dgvMDAs.DataSource = null;
             LoadMdas();
         }
 
@@ -108,44 +108,31 @@ namespace SSEPS_II.Synchronisation
             this.Close();
         }
 
-        private void MDASelectionForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-        }
-
-        private void _dgvMDAs_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void _dgvMDAs_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             using (WaitCursor wc = new WaitCursor())
             {
-                DataGridViewRow row = _dgvMDAs.Rows[e.RowIndex];
+                if (e.RowIndex >= 0 && e.ColumnIndex == 1)
+                {
+                    DataGridViewRow row = _dgvMDAs.Rows[e.RowIndex];
 
-                MDAListObj obj = row.DataBoundItem as MDAListObj;
-                if (obj.Selected)
-                {
-                    row.DefaultCellStyle.BackColor = ColorScheme.NeutralButtonColor;
-                    obj.Selected = false;
-                }
-                else
-                {
-                    row.DefaultCellStyle.BackColor = ColorScheme.Alternating;
-                    obj.Selected = true;
+                    MDAListObj obj = row.DataBoundItem as MDAListObj;
+                    if (obj.Selected)
+                    {
+                        row.DefaultCellStyle.BackColor = ColorScheme.Alternating;
+                    }
+                    else
+                    {
+                        row.DefaultCellStyle.BackColor = ColorScheme.NeutralButtonColor;
+                    }
+                    
                 }
             }
-            ////if(row.Cells[e.ColumnIndex] is DataGridViewCheckBoxCell)
-            //{
-            //    DataGridViewCheckBoxCell cell = row.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-            //    if (cell.Value == null) cell.Value = false;
+        }
 
-            //    cell.Value = cell.Value.ToString() == "True" ? false : true;
-            //    row.Selected = (bool)cell.Value;
-            //}
-            //if ((bool)(row.Cells["CheckBox"].Value) == true)
-            //{
-            //    row.Selected = true;
-            //}
-            //else
-            //{
-            //    this.dgvSelectAll.Rows[Row.Index].Selected = false;
-            //}
+        private void _dgvMDAs_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            _dgvMDAs.EndEdit();
         }
     }
 }

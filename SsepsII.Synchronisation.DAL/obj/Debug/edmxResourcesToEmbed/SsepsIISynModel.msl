@@ -1,419 +1,181 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="SsepsIISynModelStoreContainer" CdmEntityContainer="SsepsIISynEntities">
+    <EntitySetMapping Name="ArrearsAssignments">
+      <EntityTypeMapping TypeName="SsepsIISynModel.ArrearsAssignment">
+        <MappingFragment StoreEntitySet="ArrearsAssignment">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="arrearScope" ColumnName="arrearScope" />
+          <ScalarProperty Name="endPeriod" ColumnName="endPeriod" />
+          <ScalarProperty Name="startPeriod" ColumnName="startPeriod" />
+          <ScalarProperty Name="scalarValue" ColumnName="scalarValue" />
+          <ScalarProperty Name="percentVariance" ColumnName="percentVariance" />
+          <ScalarProperty Name="payItemId" ColumnName="payItemId" />
+          <ScalarProperty Name="arrearsElement" ColumnName="arrearsElement" />
+          <ScalarProperty Name="arrearAssignID" ColumnName="arrearAssignID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Banks">
+      <EntityTypeMapping TypeName="SsepsIISynModel.Bank">
+        <MappingFragment StoreEntitySet="Bank">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BankBranches">
+      <EntityTypeMapping TypeName="SsepsIISynModel.BankBranch">
+        <MappingFragment StoreEntitySet="BankBranch">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="BankID" ColumnName="BankID" />
+          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Budgets">
+      <EntityTypeMapping TypeName="SsepsIISynModel.Budget">
+        <MappingFragment StoreEntitySet="Budget">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="TotalApprovedBudgetSalary" ColumnName="TotalApprovedBudgetSalary" />
+          <ScalarProperty Name="TotalApprovedStaff" ColumnName="TotalApprovedStaff" />
+          <ScalarProperty Name="MdaID" ColumnName="MdaID" />
+          <ScalarProperty Name="FinancialYear" ColumnName="FinancialYear" />
+          <ScalarProperty Name="BudgetCode" ColumnName="BudgetCode" />
+          <ScalarProperty Name="BudgetID" ColumnName="BudgetID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DirectorateListings">
+      <EntityTypeMapping TypeName="SsepsIISynModel.DirectorateListing">
+        <MappingFragment StoreEntitySet="DirectorateListing">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="directorateType" ColumnName="directorateType" />
+          <ScalarProperty Name="directorateLocation" ColumnName="directorateLocation" />
+          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
+          <ScalarProperty Name="directorateName" ColumnName="directorateName" />
+          <ScalarProperty Name="directorateCode" ColumnName="directorateCode" />
+          <ScalarProperty Name="financeDirectorateID" ColumnName="financeDirectorateID" />
+          <ScalarProperty Name="directorateID" ColumnName="directorateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="SsepsIISynModel.Employee">
         <MappingFragment StoreEntitySet="Employee">
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="prefix" ColumnName="prefix" />
-          <ScalarProperty Name="surName" ColumnName="surName" />
-          <ScalarProperty Name="givenName" ColumnName="givenName" />
-          <ScalarProperty Name="otherNames" ColumnName="otherNames" />
-          <ScalarProperty Name="gender" ColumnName="gender" />
-          <ScalarProperty Name="dateofBirth" ColumnName="dateofBirth" />
-          <ScalarProperty Name="maritalStatus" ColumnName="maritalStatus" />
-          <ScalarProperty Name="EmployeePIN" ColumnName="EmployeePIN" />
-          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
-          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
-          <ScalarProperty Name="hrmisCode" ColumnName="hrmisCode" />
-          <ScalarProperty Name="dateofAppointment" ColumnName="dateofAppointment" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="email" ColumnName="email" />
-          <ScalarProperty Name="phoneMobile" ColumnName="phoneMobile" />
-          <ScalarProperty Name="phoneMobile2" ColumnName="phoneMobile2" />
-          <ScalarProperty Name="phoneMobile3" ColumnName="phoneMobile3" />
-          <ScalarProperty Name="home_StateID" ColumnName="home_StateID" />
-          <ScalarProperty Name="address" ColumnName="address" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
-          <ScalarProperty Name="lastPromotionDate" ColumnName="lastPromotionDate" />
           <ScalarProperty Name="lastIncrementDate" ColumnName="lastIncrementDate" />
+          <ScalarProperty Name="lastPromotionDate" ColumnName="lastPromotionDate" />
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="home_StateID" ColumnName="home_StateID" />
+          <ScalarProperty Name="phoneMobile3" ColumnName="phoneMobile3" />
+          <ScalarProperty Name="phoneMobile2" ColumnName="phoneMobile2" />
+          <ScalarProperty Name="phoneMobile" ColumnName="phoneMobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="dateofAppointment" ColumnName="dateofAppointment" />
+          <ScalarProperty Name="hrmisCode" ColumnName="hrmisCode" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="NationalID" ColumnName="NationalID" />
+          <ScalarProperty Name="EmployeePIN" ColumnName="EmployeePIN" />
+          <ScalarProperty Name="maritalStatus" ColumnName="maritalStatus" />
+          <ScalarProperty Name="dateofBirth" ColumnName="dateofBirth" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="otherNames" ColumnName="otherNames" />
+          <ScalarProperty Name="givenName" ColumnName="givenName" />
+          <ScalarProperty Name="surName" ColumnName="surName" />
+          <ScalarProperty Name="prefix" ColumnName="prefix" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EmployeeAssignments">
       <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeAssignment">
         <MappingFragment StoreEntitySet="EmployeeAssignment">
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="evidenceReferenceNo" ColumnName="evidenceReferenceNo" />
-          <ScalarProperty Name="employementTermID" ColumnName="employementTermID" />
-          <ScalarProperty Name="governmentLevel" ColumnName="governmentLevel" />
-          <ScalarProperty Name="fundSource" ColumnName="fundSource" />
-          <ScalarProperty Name="dateStart" ColumnName="dateStart" />
-          <ScalarProperty Name="jobKey" ColumnName="jobKey" />
-          <ScalarProperty Name="jobID" ColumnName="jobID" />
-          <ScalarProperty Name="JobTitleNominalRoll" ColumnName="JobTitleNominalRoll" />
-          <ScalarProperty Name="jobTitleAgainst" ColumnName="jobTitleAgainst" />
-          <ScalarProperty Name="payScaleID" ColumnName="payScaleID" />
-          <ScalarProperty Name="jobGrade" ColumnName="jobGrade" />
-          <ScalarProperty Name="jobGradeClassification" ColumnName="jobGradeClassification" />
-          <ScalarProperty Name="paySegment" ColumnName="paySegment" />
-          <ScalarProperty Name="payStatusID" ColumnName="payStatusID" />
-          <ScalarProperty Name="IsPensionable" ColumnName="IsPensionable" />
-          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
-          <ScalarProperty Name="directorateID" ColumnName="directorateID" />
-          <ScalarProperty Name="job_worklocation_StateID" ColumnName="job_worklocation_StateID" />
-          <ScalarProperty Name="FileIndex" ColumnName="FileIndex" />
-          <ScalarProperty Name="payType" ColumnName="payType" />
-          <ScalarProperty Name="payMethod" ColumnName="payMethod" />
-          <ScalarProperty Name="payFrequency" ColumnName="payFrequency" />
-          <ScalarProperty Name="authorisedBy" ColumnName="authorisedBy" />
-          <ScalarProperty Name="authorisedOn" ColumnName="authorisedOn" />
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="assignmentState" ColumnName="assignmentState" />
           <ScalarProperty Name="eventId" ColumnName="eventId" />
-          <ScalarProperty Name="workflowComplete" ColumnName="workflowComplete" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EmployeeEvents">
-      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeEvent">
-        <MappingFragment StoreEntitySet="EmployeeEvent">
-          <ScalarProperty Name="employeeEventID" ColumnName="employeeEventID" />
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="EventID" ColumnName="EventID" />
-          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
-          <ScalarProperty Name="EventDescription" ColumnName="EventDescription" />
-          <ScalarProperty Name="EffectOnSalary" ColumnName="EffectOnSalary" />
-          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
-          <ScalarProperty Name="StartPeriod" ColumnName="StartPeriod" />
-          <ScalarProperty Name="EndPeriod" ColumnName="EndPeriod" />
-          <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
-          <ScalarProperty Name="jobKey" ColumnName="jobKey" />
-          <ScalarProperty Name="ActingGrade" ColumnName="ActingGrade" />
-          <ScalarProperty Name="authorizedBy" ColumnName="authorizedBy" />
-          <ScalarProperty Name="authorizedOn" ColumnName="authorizedOn" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EmployeePayItems">
-      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeePayItem">
-        <MappingFragment StoreEntitySet="EmployeePayItem">
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
-          <ScalarProperty Name="startPeriod" ColumnName="startPeriod" />
-          <ScalarProperty Name="endPeriod" ColumnName="endPeriod" />
-          <ScalarProperty Name="paramValue" ColumnName="paramValue" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EmployeePayrolls">
-      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeePayroll">
-        <MappingFragment StoreEntitySet="EmployeePayroll">
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="payrollPeriod" ColumnName="payrollPeriod" />
-          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
+          <ScalarProperty Name="authorisedOn" ColumnName="authorisedOn" />
+          <ScalarProperty Name="authorisedBy" ColumnName="authorisedBy" />
+          <ScalarProperty Name="payFrequency" ColumnName="payFrequency" />
+          <ScalarProperty Name="payMethod" ColumnName="payMethod" />
+          <ScalarProperty Name="payType" ColumnName="payType" />
+          <ScalarProperty Name="FileIndex" ColumnName="FileIndex" />
+          <ScalarProperty Name="job_worklocation_StateID" ColumnName="job_worklocation_StateID" />
           <ScalarProperty Name="directorateID" ColumnName="directorateID" />
-          <ScalarProperty Name="payrollDate" ColumnName="payrollDate" />
-          <ScalarProperty Name="payItemsXML" ColumnName="payItemsXML" />
-          <ScalarProperty Name="grossPay" ColumnName="grossPay" />
-          <ScalarProperty Name="netPay" ColumnName="netPay" />
-          <ScalarProperty Name="payrollPreparedBy" ColumnName="payrollPreparedBy" />
-          <ScalarProperty Name="payrollVerifiedBy" ColumnName="payrollVerifiedBy" />
-          <ScalarProperty Name="payrollApprovedBy" ColumnName="payrollApprovedBy" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EmployeePayrollHistories">
-      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeePayrollHistory">
-        <MappingFragment StoreEntitySet="EmployeePayrollHistory">
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="payrollPeriod" ColumnName="payrollPeriod" />
           <ScalarProperty Name="mdaID" ColumnName="mdaID" />
-          <ScalarProperty Name="directorateID" ColumnName="directorateID" />
-          <ScalarProperty Name="payrollDate" ColumnName="payrollDate" />
-          <ScalarProperty Name="payItemsXML" ColumnName="payItemsXML" />
-          <ScalarProperty Name="grossPay" ColumnName="grossPay" />
-          <ScalarProperty Name="netPay" ColumnName="netPay" />
-          <ScalarProperty Name="payrollPreparedBy" ColumnName="payrollPreparedBy" />
-          <ScalarProperty Name="payrollVerifiedBy" ColumnName="payrollVerifiedBy" />
-          <ScalarProperty Name="payrollApprovedBy" ColumnName="payrollApprovedBy" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="datePosted" ColumnName="datePosted" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="whoPosted" ColumnName="whoPosted" />
-          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="InstallationConfigs">
-      <EntityTypeMapping TypeName="SsepsIISynModel.InstallationConfig">
-        <MappingFragment StoreEntitySet="InstallationConfig">
-          <ScalarProperty Name="installationId" ColumnName="installationId" />
-          <ScalarProperty Name="installation_key" ColumnName="installation_key" />
-          <ScalarProperty Name="installation_value" ColumnName="installation_value" />
-          <ScalarProperty Name="installation_token" ColumnName="installation_token" />
-          <ScalarProperty Name="mdaId" ColumnName="mdaId" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ListItems">
-      <EntityTypeMapping TypeName="SsepsIISynModel.ListItem">
-        <MappingFragment StoreEntitySet="ListItem">
-          <ScalarProperty Name="listID" ColumnName="listID" />
-          <ScalarProperty Name="listTypeID" ColumnName="listTypeID" />
-          <ScalarProperty Name="listText" ColumnName="listText" />
-          <ScalarProperty Name="listValue" ColumnName="listValue" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ListTypes">
-      <EntityTypeMapping TypeName="SsepsIISynModel.ListType">
-        <MappingFragment StoreEntitySet="ListType">
-          <ScalarProperty Name="listtypeID" ColumnName="listtypeID" />
-          <ScalarProperty Name="listTypeText" ColumnName="listTypeText" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Logs">
-      <EntityTypeMapping TypeName="SsepsIISynModel.Log">
-        <MappingFragment StoreEntitySet="Log">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Level" ColumnName="Level" />
-          <ScalarProperty Name="Message" ColumnName="Message" />
-          <ScalarProperty Name="Exception" ColumnName="Exception" />
-          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MDA_CONFIG">
-      <EntityTypeMapping TypeName="SsepsIISynModel.MDA_CONFIG">
-        <MappingFragment StoreEntitySet="MDA_CONFIG">
-          <ScalarProperty Name="MDA_CONFIG_ID" ColumnName="MDA_CONFIG_ID" />
-          <ScalarProperty Name="MDAID" ColumnName="MDAID" />
-          <ScalarProperty Name="CONFIG_KEY" ColumnName="CONFIG_KEY" />
-          <ScalarProperty Name="CONFIG_VALUE" ColumnName="CONFIG_VALUE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MdaGovernmentMappings">
-      <EntityTypeMapping TypeName="SsepsIISynModel.MdaGovernmentMapping">
-        <MappingFragment StoreEntitySet="MdaGovernmentMapping">
-          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
-          <ScalarProperty Name="mdaStructureID" ColumnName="mdaStructureID" />
-          <ScalarProperty Name="governmentID" ColumnName="governmentID" />
-          <ScalarProperty Name="mdaCode" ColumnName="mdaCode" />
-          <ScalarProperty Name="chartOfAccountCode" ColumnName="chartOfAccountCode" />
-          <ScalarProperty Name="mdaName" ColumnName="mdaName" />
-          <ScalarProperty Name="AccountingOfficerName" ColumnName="AccountingOfficerName" />
-          <ScalarProperty Name="AccountingOfficerMobileNumber" ColumnName="AccountingOfficerMobileNumber" />
-          <ScalarProperty Name="PayrollManagerName" ColumnName="PayrollManagerName" />
-          <ScalarProperty Name="PayrollManagerMobileNumber" ColumnName="PayrollManagerMobileNumber" />
-          <ScalarProperty Name="mdaAddress" ColumnName="mdaAddress" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MdaStructures">
-      <EntityTypeMapping TypeName="SsepsIISynModel.MdaStructure">
-        <MappingFragment StoreEntitySet="MdaStructure">
-          <ScalarProperty Name="mdaStructureID" ColumnName="mdaStructureID" />
-          <ScalarProperty Name="mdaStructureName" ColumnName="mdaStructureName" />
-          <ScalarProperty Name="mdaStructureType" ColumnName="mdaStructureType" />
-          <ScalarProperty Name="sectorID" ColumnName="sectorID" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SITE_CONFIG">
-      <EntityTypeMapping TypeName="SsepsIISynModel.SITE_CONFIG">
-        <MappingFragment StoreEntitySet="SITE_CONFIG">
-          <ScalarProperty Name="SITE_CONFIG_ID" ColumnName="SITE_CONFIG_ID" />
-          <ScalarProperty Name="CONFIG_KEY" ColumnName="CONFIG_KEY" />
-          <ScalarProperty Name="CONFIG_VALUE" ColumnName="CONFIG_VALUE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SSEPS_CONFIG">
-      <EntityTypeMapping TypeName="SsepsIISynModel.SSEPS_CONFIG">
-        <MappingFragment StoreEntitySet="SSEPS_CONFIG">
-          <ScalarProperty Name="CONFIG_KEY" ColumnName="CONFIG_KEY" />
-          <ScalarProperty Name="CONFIG_VALUE" ColumnName="CONFIG_VALUE" />
-          <ScalarProperty Name="CONFIG_TYPE" ColumnName="CONFIG_TYPE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SystemUsers">
-      <EntityTypeMapping TypeName="SsepsIISynModel.SystemUser">
-        <MappingFragment StoreEntitySet="SystemUser">
-          <ScalarProperty Name="SystemUserId" ColumnName="SystemUserId" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
-          <ScalarProperty Name="Surname" ColumnName="Surname" />
-          <ScalarProperty Name="GivenName" ColumnName="GivenName" />
-          <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
-          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
-          <ScalarProperty Name="Active" ColumnName="Active" />
-          <ScalarProperty Name="Locked" ColumnName="Locked" />
-          <ScalarProperty Name="LastIpAddress" ColumnName="LastIpAddress" />
-          <ScalarProperty Name="UserLoginCount" ColumnName="UserLoginCount" />
-          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
-          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
-          <ScalarProperty Name="WhoModified" ColumnName="WhoModified" />
-          <ScalarProperty Name="LogRefId" ColumnName="LogRefId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SystemUserMdas">
-      <EntityTypeMapping TypeName="SsepsIISynModel.SystemUserMda">
-        <MappingFragment StoreEntitySet="SystemUserMda">
-          <ScalarProperty Name="SystemUserId" ColumnName="SystemUserId" />
-          <ScalarProperty Name="MdaId" ColumnName="MdaId" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SystemUserRoles">
-      <EntityTypeMapping TypeName="SsepsIISynModel.SystemUserRole">
-        <MappingFragment StoreEntitySet="SystemUserRole">
-          <ScalarProperty Name="SystemUserId" ColumnName="SystemUserId" />
-          <ScalarProperty Name="SystemRoleId" ColumnName="SystemRoleId" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SystemUserSupervisedMdas">
-      <EntityTypeMapping TypeName="SsepsIISynModel.SystemUserSupervisedMda">
-        <MappingFragment StoreEntitySet="SystemUserSupervisedMda">
-          <ScalarProperty Name="SystemUserId" ColumnName="SystemUserId" />
-          <ScalarProperty Name="MdaId" ColumnName="MdaId" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TransDatas">
-      <EntityTypeMapping TypeName="SsepsIISynModel.TransData">
-        <MappingFragment StoreEntitySet="TransData">
-          <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
-          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
-          <ScalarProperty Name="TableName" ColumnName="TableName" />
-          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
-          <ScalarProperty Name="OldValues" ColumnName="OldValues" />
-          <ScalarProperty Name="NewValues" ColumnName="NewValues" />
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
-          <ScalarProperty Name="SyncPeriod" ColumnName="SyncPeriod" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="MdaId" ColumnName="MdaId" />
-          <ScalarProperty Name="state" ColumnName="state" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TransferredEmployees">
-      <EntityTypeMapping TypeName="SsepsIISynModel.TransferredEmployee">
-        <MappingFragment StoreEntitySet="TransferredEmployee">
-          <ScalarProperty Name="TransferredEmployeeId" ColumnName="TransferredEmployeeId" />
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="TransferReason" ColumnName="TransferReason" />
-          <ScalarProperty Name="IsPermanent" ColumnName="IsPermanent" />
-          <ScalarProperty Name="TransferXML" ColumnName="TransferXML" />
-          <ScalarProperty Name="TransferDirection" ColumnName="TransferDirection" />
-          <ScalarProperty Name="FromDirectorateId" ColumnName="FromDirectorateId" />
-          <ScalarProperty Name="FromGrade" ColumnName="FromGrade" />
-          <ScalarProperty Name="ToGrade" ColumnName="ToGrade" />
-          <ScalarProperty Name="ToMDAID" ColumnName="ToMDAID" />
-          <ScalarProperty Name="AuthorizedBy" ColumnName="AuthorizedBy" />
-          <ScalarProperty Name="AuthorizedOn" ColumnName="AuthorizedOn" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PayItems">
-      <EntityTypeMapping TypeName="SsepsIISynModel.PayItem">
-        <MappingFragment StoreEntitySet="PayItem">
-          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
-          <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
           <ScalarProperty Name="IsPensionable" ColumnName="IsPensionable" />
-          <ScalarProperty Name="IsRecurring" ColumnName="IsRecurring" />
-          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
-          <ScalarProperty Name="IsComputed" ColumnName="IsComputed" />
-          <ScalarProperty Name="payItemType" ColumnName="payItemType" />
-          <ScalarProperty Name="payItemDescription" ColumnName="payItemDescription" />
-          <ScalarProperty Name="payItemName" ColumnName="payItemName" />
-          <ScalarProperty Name="payItemCode" ColumnName="payItemCode" />
-          <ScalarProperty Name="payItemOrder" ColumnName="payItemOrder" />
-          <ScalarProperty Name="chartofAccountCode" ColumnName="chartofAccountCode" />
-          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+          <ScalarProperty Name="payStatusID" ColumnName="payStatusID" />
+          <ScalarProperty Name="paySegment" ColumnName="paySegment" />
+          <ScalarProperty Name="jobGradeClassification" ColumnName="jobGradeClassification" />
+          <ScalarProperty Name="jobGrade" ColumnName="jobGrade" />
+          <ScalarProperty Name="payScaleID" ColumnName="payScaleID" />
+          <ScalarProperty Name="jobTitleAgainst" ColumnName="jobTitleAgainst" />
+          <ScalarProperty Name="JobTitleNominalRoll" ColumnName="JobTitleNominalRoll" />
+          <ScalarProperty Name="jobID" ColumnName="jobID" />
+          <ScalarProperty Name="jobKey" ColumnName="jobKey" />
+          <ScalarProperty Name="dateStart" ColumnName="dateStart" />
+          <ScalarProperty Name="fundSource" ColumnName="fundSource" />
+          <ScalarProperty Name="governmentLevel" ColumnName="governmentLevel" />
+          <ScalarProperty Name="employementTermID" ColumnName="employementTermID" />
+          <ScalarProperty Name="evidenceReferenceNo" ColumnName="evidenceReferenceNo" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PayItemMDAStructureMappings">
-      <EntityTypeMapping TypeName="SsepsIISynModel.PayItemMDAStructureMapping">
-        <MappingFragment StoreEntitySet="PayItemMDAStructureMapping">
+    <EntitySetMapping Name="EmployeeAssignmentEvidences">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeAssignmentEvidence">
+        <MappingFragment StoreEntitySet="EmployeeAssignmentEvidence">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
           <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
-          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
           <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
-          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="mdaStructureID" ColumnName="mdaStructureID" />
-          <ScalarProperty Name="PayitemID" ColumnName="PayitemID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Governments">
-      <EntityTypeMapping TypeName="SsepsIISynModel.Government">
-        <MappingFragment StoreEntitySet="Government">
-          <ScalarProperty Name="GovernmentLogo" ColumnName="GovernmentLogo" />
-          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
           <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
-          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
           <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="linkToID" ColumnName="linkToID" />
-          <ScalarProperty Name="governmentLevelID" ColumnName="governmentLevelID" />
-          <ScalarProperty Name="governmentName" ColumnName="governmentName" />
-          <ScalarProperty Name="governmentCode" ColumnName="governmentCode" />
-          <ScalarProperty Name="governmentID" ColumnName="governmentID" />
+          <ScalarProperty Name="fileSize" ColumnName="fileSize" />
+          <ScalarProperty Name="fileContent" ColumnName="fileContent" />
+          <ScalarProperty Name="fileoriginalName" ColumnName="fileoriginalName" />
+          <ScalarProperty Name="filecontentType" ColumnName="filecontentType" />
+          <ScalarProperty Name="evidenceComment" ColumnName="evidenceComment" />
+          <ScalarProperty Name="evidenceSignedOn" ColumnName="evidenceSignedOn" />
+          <ScalarProperty Name="evidenceSignedBy" ColumnName="evidenceSignedBy" />
+          <ScalarProperty Name="evidenceReferenceNo" ColumnName="evidenceReferenceNo" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeEvidenceID" ColumnName="EmployeeEvidenceID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -425,7 +187,7 @@
           <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
           <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
           <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="workflowComplete" ColumnName="workflowComplete" />
+          <ScalarProperty Name="assignmentState" ColumnName="assignmentState" />
           <ScalarProperty Name="eventId" ColumnName="eventId" />
           <ScalarProperty Name="authorisedOn" ColumnName="authorisedOn" />
           <ScalarProperty Name="authorisedBy" ColumnName="authorisedBy" />
@@ -456,22 +218,41 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="BankBranches">
-      <EntityTypeMapping TypeName="SsepsIISynModel.BankBranch">
-        <MappingFragment StoreEntitySet="BankBranch">
+    <EntitySetMapping Name="EmployeeAttendances">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeAttendance">
+        <MappingFragment StoreEntitySet="EmployeeAttendance">
           <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
           <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
           <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
           <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
           <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="BankID" ColumnName="BankID" />
-          <ScalarProperty Name="TelephoneNumber" ColumnName="TelephoneNumber" />
-          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
-          <ScalarProperty Name="Address2" ColumnName="Address2" />
-          <ScalarProperty Name="Address1" ColumnName="Address1" />
-          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
-          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
-          <ScalarProperty Name="BranchID" ColumnName="BranchID" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="endorsedOn" ColumnName="endorsedOn" />
+          <ScalarProperty Name="endorsedBy" ColumnName="endorsedBy" />
+          <ScalarProperty Name="daysAbsent" ColumnName="daysAbsent" />
+          <ScalarProperty Name="daysAttended" ColumnName="daysAttended" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="payPeriod" ColumnName="payPeriod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeAttendanceHistories">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeAttendanceHistory">
+        <MappingFragment StoreEntitySet="EmployeeAttendanceHistory">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="endorsedOn" ColumnName="endorsedOn" />
+          <ScalarProperty Name="endorsedBy" ColumnName="endorsedBy" />
+          <ScalarProperty Name="daysAbsent" ColumnName="daysAbsent" />
+          <ScalarProperty Name="daysAttended" ColumnName="daysAttended" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="payPeriod" ColumnName="payPeriod" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -490,29 +271,632 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="States">
-      <EntityTypeMapping TypeName="SsepsIISynModel.State">
-        <MappingFragment StoreEntitySet="State">
-          <ScalarProperty Name="Government" ColumnName="Government" />
-          <ScalarProperty Name="StateName" ColumnName="StateName" />
-          <ScalarProperty Name="StateID" ColumnName="StateID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DirectorateListings">
-      <EntityTypeMapping TypeName="SsepsIISynModel.DirectorateListing">
-        <MappingFragment StoreEntitySet="DirectorateListing">
+    <EntitySetMapping Name="EmployeeEvents">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeEvent">
+        <MappingFragment StoreEntitySet="EmployeeEvent">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
           <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
           <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
           <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
           <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
-          <ScalarProperty Name="directorateType" ColumnName="directorateType" />
-          <ScalarProperty Name="directorateLocation" ColumnName="directorateLocation" />
-          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
-          <ScalarProperty Name="directorateName" ColumnName="directorateName" />
-          <ScalarProperty Name="directorateCode" ColumnName="directorateCode" />
-          <ScalarProperty Name="financeDirectorateID" ColumnName="financeDirectorateID" />
+          <ScalarProperty Name="authorizedOn" ColumnName="authorizedOn" />
+          <ScalarProperty Name="authorizedBy" ColumnName="authorizedBy" />
+          <ScalarProperty Name="ActingGrade" ColumnName="ActingGrade" />
+          <ScalarProperty Name="jobKey" ColumnName="jobKey" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="EndPeriod" ColumnName="EndPeriod" />
+          <ScalarProperty Name="StartPeriod" ColumnName="StartPeriod" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="EffectOnSalary" ColumnName="EffectOnSalary" />
+          <ScalarProperty Name="EventDescription" ColumnName="EventDescription" />
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="employeeEventID" ColumnName="employeeEventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeEventHistories">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeEventHistory">
+        <MappingFragment StoreEntitySet="EmployeeEventHistory">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="authorizedOn" ColumnName="authorizedOn" />
+          <ScalarProperty Name="authorizedBy" ColumnName="authorizedBy" />
+          <ScalarProperty Name="ActingGrade" ColumnName="ActingGrade" />
+          <ScalarProperty Name="jobKey" ColumnName="jobKey" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="EndPeriod" ColumnName="EndPeriod" />
+          <ScalarProperty Name="StartPeriod" ColumnName="StartPeriod" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="EffectOnSalary" ColumnName="EffectOnSalary" />
+          <ScalarProperty Name="EventDescription" ColumnName="EventDescription" />
+          <ScalarProperty Name="EventTypeID" ColumnName="EventTypeID" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="employeeEventID" ColumnName="employeeEventID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeOvertimes">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeOvertime">
+        <MappingFragment StoreEntitySet="EmployeeOvertime">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="endorsedOn" ColumnName="endorsedOn" />
+          <ScalarProperty Name="endorsedBy" ColumnName="endorsedBy" />
+          <ScalarProperty Name="hoursNormalWorkingday" ColumnName="hoursNormalWorkingday" />
+          <ScalarProperty Name="hoursWeekEndPublicHoliday" ColumnName="hoursWeekEndPublicHoliday" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="payPeriod" ColumnName="payPeriod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeOvertimeHistories">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeeOvertimeHistory">
+        <MappingFragment StoreEntitySet="EmployeeOvertimeHistory">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="endorsedOn" ColumnName="endorsedOn" />
+          <ScalarProperty Name="endorsedBy" ColumnName="endorsedBy" />
+          <ScalarProperty Name="hoursNormalWorkingday" ColumnName="hoursNormalWorkingday" />
+          <ScalarProperty Name="hoursWeekEndPublicHoliday" ColumnName="hoursWeekEndPublicHoliday" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="payPeriod" ColumnName="payPeriod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePayItems">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeePayItem">
+        <MappingFragment StoreEntitySet="EmployeePayItem">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="paramValue" ColumnName="paramValue" />
+          <ScalarProperty Name="endPeriod" ColumnName="endPeriod" />
+          <ScalarProperty Name="startPeriod" ColumnName="startPeriod" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePayrolls">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeePayroll">
+        <MappingFragment StoreEntitySet="EmployeePayroll">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="payrollApprovedBy" ColumnName="payrollApprovedBy" />
+          <ScalarProperty Name="payrollVerifiedBy" ColumnName="payrollVerifiedBy" />
+          <ScalarProperty Name="payrollPreparedBy" ColumnName="payrollPreparedBy" />
+          <ScalarProperty Name="netPay" ColumnName="netPay" />
+          <ScalarProperty Name="grossPay" ColumnName="grossPay" />
+          <ScalarProperty Name="payItemsXML" ColumnName="payItemsXML" />
+          <ScalarProperty Name="payrollDate" ColumnName="payrollDate" />
           <ScalarProperty Name="directorateID" ColumnName="directorateID" />
+          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
+          <ScalarProperty Name="payrollPeriod" ColumnName="payrollPeriod" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePayrollHistories">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeePayrollHistory">
+        <MappingFragment StoreEntitySet="EmployeePayrollHistory">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoPosted" ColumnName="whoPosted" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="datePosted" ColumnName="datePosted" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="payrollApprovedBy" ColumnName="payrollApprovedBy" />
+          <ScalarProperty Name="payrollVerifiedBy" ColumnName="payrollVerifiedBy" />
+          <ScalarProperty Name="payrollPreparedBy" ColumnName="payrollPreparedBy" />
+          <ScalarProperty Name="netPay" ColumnName="netPay" />
+          <ScalarProperty Name="grossPay" ColumnName="grossPay" />
+          <ScalarProperty Name="payItemsXML" ColumnName="payItemsXML" />
+          <ScalarProperty Name="payrollDate" ColumnName="payrollDate" />
+          <ScalarProperty Name="directorateID" ColumnName="directorateID" />
+          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
+          <ScalarProperty Name="payrollPeriod" ColumnName="payrollPeriod" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePhotoes">
+      <EntityTypeMapping TypeName="SsepsIISynModel.EmployeePhoto">
+        <MappingFragment StoreEntitySet="EmployeePhoto">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="RightFourFingers" ColumnName="RightFourFingers" />
+          <ScalarProperty Name="RightThump" ColumnName="RightThump" />
+          <ScalarProperty Name="LeftFourFingers" ColumnName="LeftFourFingers" />
+          <ScalarProperty Name="LeftThump" ColumnName="LeftThump" />
+          <ScalarProperty Name="EmployeePhoto1" ColumnName="EmployeePhoto" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinanceDirectorateListings">
+      <EntityTypeMapping TypeName="SsepsIISynModel.FinanceDirectorateListing">
+        <MappingFragment StoreEntitySet="FinanceDirectorateListing">
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="governmentID" ColumnName="governmentID" />
+          <ScalarProperty Name="finDirectorateName" ColumnName="finDirectorateName" />
+          <ScalarProperty Name="finDirectorateCode" ColumnName="finDirectorateCode" />
+          <ScalarProperty Name="financeDirectorateID" ColumnName="financeDirectorateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Governments">
+      <EntityTypeMapping TypeName="SsepsIISynModel.Government">
+        <MappingFragment StoreEntitySet="Government">
+          <ScalarProperty Name="GovernmentLogo" ColumnName="GovernmentLogo" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="linkToID" ColumnName="linkToID" />
+          <ScalarProperty Name="governmentLevelID" ColumnName="governmentLevelID" />
+          <ScalarProperty Name="governmentName" ColumnName="governmentName" />
+          <ScalarProperty Name="governmentCode" ColumnName="governmentCode" />
+          <ScalarProperty Name="governmentID" ColumnName="governmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstallationConfigs">
+      <EntityTypeMapping TypeName="SsepsIISynModel.InstallationConfig">
+        <MappingFragment StoreEntitySet="InstallationConfig">
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="mdaId" ColumnName="mdaId" />
+          <ScalarProperty Name="installation_token" ColumnName="installation_token" />
+          <ScalarProperty Name="installation_value" ColumnName="installation_value" />
+          <ScalarProperty Name="installation_key" ColumnName="installation_key" />
+          <ScalarProperty Name="installationId" ColumnName="installationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="SsepsIISynModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="MdaID" ColumnName="MdaID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs1">
+      <EntityTypeMapping TypeName="SsepsIISynModel.Job1">
+        <MappingFragment StoreEntitySet="Jobs">
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListItems">
+      <EntityTypeMapping TypeName="SsepsIISynModel.ListItem">
+        <MappingFragment StoreEntitySet="ListItem">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="listValue" ColumnName="listValue" />
+          <ScalarProperty Name="listText" ColumnName="listText" />
+          <ScalarProperty Name="listTypeID" ColumnName="listTypeID" />
+          <ScalarProperty Name="listID" ColumnName="listID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListTypes">
+      <EntityTypeMapping TypeName="SsepsIISynModel.ListType">
+        <MappingFragment StoreEntitySet="ListType">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="listTypeText" ColumnName="listTypeText" />
+          <ScalarProperty Name="listtypeID" ColumnName="listtypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MDA_CONFIG">
+      <EntityTypeMapping TypeName="SsepsIISynModel.MDA_CONFIG">
+        <MappingFragment StoreEntitySet="MDA_CONFIG">
+          <ScalarProperty Name="CONFIG_VALUE" ColumnName="CONFIG_VALUE" />
+          <ScalarProperty Name="CONFIG_KEY" ColumnName="CONFIG_KEY" />
+          <ScalarProperty Name="MDAID" ColumnName="MDAID" />
+          <ScalarProperty Name="MDA_CONFIG_ID" ColumnName="MDA_CONFIG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MdaGovernmentMappings">
+      <EntityTypeMapping TypeName="SsepsIISynModel.MdaGovernmentMapping">
+        <MappingFragment StoreEntitySet="MdaGovernmentMapping">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="mdaAddress" ColumnName="mdaAddress" />
+          <ScalarProperty Name="PayrollManagerMobileNumber" ColumnName="PayrollManagerMobileNumber" />
+          <ScalarProperty Name="PayrollManagerName" ColumnName="PayrollManagerName" />
+          <ScalarProperty Name="AccountingOfficerMobileNumber" ColumnName="AccountingOfficerMobileNumber" />
+          <ScalarProperty Name="AccountingOfficerName" ColumnName="AccountingOfficerName" />
+          <ScalarProperty Name="mdaName" ColumnName="mdaName" />
+          <ScalarProperty Name="chartOfAccountCode" ColumnName="chartOfAccountCode" />
+          <ScalarProperty Name="mdaCode" ColumnName="mdaCode" />
+          <ScalarProperty Name="governmentID" ColumnName="governmentID" />
+          <ScalarProperty Name="mdaStructureID" ColumnName="mdaStructureID" />
+          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MdaStructures">
+      <EntityTypeMapping TypeName="SsepsIISynModel.MdaStructure">
+        <MappingFragment StoreEntitySet="MdaStructure">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="sectorID" ColumnName="sectorID" />
+          <ScalarProperty Name="mdaStructureType" ColumnName="mdaStructureType" />
+          <ScalarProperty Name="mdaStructureName" ColumnName="mdaStructureName" />
+          <ScalarProperty Name="mdaStructureID" ColumnName="mdaStructureID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MdaStructurePayScaleMappings">
+      <EntityTypeMapping TypeName="SsepsIISynModel.MdaStructurePayScaleMapping">
+        <MappingFragment StoreEntitySet="MdaStructurePayScaleMapping">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="payScaleID" ColumnName="payScaleID" />
+          <ScalarProperty Name="mdaStructureID" ColumnName="mdaStructureID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NominalRolls">
+      <EntityTypeMapping TypeName="SsepsIISynModel.NominalRoll">
+        <MappingFragment StoreEntitySet="NominalRoll">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="NominalRollXML" ColumnName="NominalRollXML" />
+          <ScalarProperty Name="ApprovedStatus" ColumnName="ApprovedStatus" />
+          <ScalarProperty Name="MdaID" ColumnName="MdaID" />
+          <ScalarProperty Name="NominalRollYear" ColumnName="NominalRollYear" />
+          <ScalarProperty Name="NominalRollID" ColumnName="NominalRollID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NominalRollHistories">
+      <EntityTypeMapping TypeName="SsepsIISynModel.NominalRollHistory">
+        <MappingFragment StoreEntitySet="NominalRollHistory">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="NominalRollXML" ColumnName="NominalRollXML" />
+          <ScalarProperty Name="ApprovedStatus" ColumnName="ApprovedStatus" />
+          <ScalarProperty Name="MdaID" ColumnName="MdaID" />
+          <ScalarProperty Name="NominalRollYear" ColumnName="NominalRollYear" />
+          <ScalarProperty Name="NominalRollID" ColumnName="NominalRollID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayGrades">
+      <EntityTypeMapping TypeName="SsepsIISynModel.PayGrade">
+        <MappingFragment StoreEntitySet="PayGrade">
+          <ScalarProperty Name="IsUnclassified" ColumnName="IsUnclassified" />
+          <ScalarProperty Name="IsClassified" ColumnName="IsClassified" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayItems">
+      <EntityTypeMapping TypeName="SsepsIISynModel.PayItem">
+        <MappingFragment StoreEntitySet="PayItem">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="IsMandatory" ColumnName="IsMandatory" />
+          <ScalarProperty Name="IsTaxable" ColumnName="IsTaxable" />
+          <ScalarProperty Name="IsPensionable" ColumnName="IsPensionable" />
+          <ScalarProperty Name="IsRecurring" ColumnName="IsRecurring" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="IsComputed" ColumnName="IsComputed" />
+          <ScalarProperty Name="payItemType" ColumnName="payItemType" />
+          <ScalarProperty Name="payItemDescription" ColumnName="payItemDescription" />
+          <ScalarProperty Name="payItemName" ColumnName="payItemName" />
+          <ScalarProperty Name="payItemCode" ColumnName="payItemCode" />
+          <ScalarProperty Name="payItemOrder" ColumnName="payItemOrder" />
+          <ScalarProperty Name="chartofAccountCode" ColumnName="chartofAccountCode" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayItemGovernmentMappings">
+      <EntityTypeMapping TypeName="SsepsIISynModel.PayItemGovernmentMapping">
+        <MappingFragment StoreEntitySet="PayItemGovernmentMapping">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="governmentID" ColumnName="governmentID" />
+          <ScalarProperty Name="PayitemID" ColumnName="PayitemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayItemGradeMappings">
+      <EntityTypeMapping TypeName="SsepsIISynModel.PayItemGradeMapping">
+        <MappingFragment StoreEntitySet="PayItemGradeMapping">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="PayItemAmount" ColumnName="PayItemAmount" />
+          <ScalarProperty Name="IncrementPoint" ColumnName="IncrementPoint" />
+          <ScalarProperty Name="PayGradeID" ColumnName="PayGradeID" />
+          <ScalarProperty Name="PayItemID" ColumnName="PayItemID" />
+          <ScalarProperty Name="PayScaleID" ColumnName="PayScaleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayItemMDAStructureMappings">
+      <EntityTypeMapping TypeName="SsepsIISynModel.PayItemMDAStructureMapping">
+        <MappingFragment StoreEntitySet="PayItemMDAStructureMapping">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="mdaStructureID" ColumnName="mdaStructureID" />
+          <ScalarProperty Name="PayitemID" ColumnName="PayitemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayScales">
+      <EntityTypeMapping TypeName="SsepsIISynModel.PayScale">
+        <MappingFragment StoreEntitySet="PayScale">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="IsPensionable" ColumnName="IsPensionable" />
+          <ScalarProperty Name="payGradeXML" ColumnName="payGradeXML" />
+          <ScalarProperty Name="payScaleName" ColumnName="payScaleName" />
+          <ScalarProperty Name="payScaleID" ColumnName="payScaleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayStatusChanges">
+      <EntityTypeMapping TypeName="SsepsIISynModel.PayStatusChange">
+        <MappingFragment StoreEntitySet="PayStatusChange">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="dateChanged" ColumnName="dateChanged" />
+          <ScalarProperty Name="whoChanged" ColumnName="whoChanged" />
+          <ScalarProperty Name="whoAuthorized" ColumnName="whoAuthorized" />
+          <ScalarProperty Name="reasonForChange" ColumnName="reasonForChange" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="payStatusID" ColumnName="payStatusID" />
+          <ScalarProperty Name="payChangeID" ColumnName="payChangeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalaryAdvances">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SalaryAdvance">
+        <MappingFragment StoreEntitySet="SalaryAdvance">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="endorsedOn" ColumnName="endorsedOn" />
+          <ScalarProperty Name="endorsedBy" ColumnName="endorsedBy" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="repaymentAmount" ColumnName="repaymentAmount" />
+          <ScalarProperty Name="EndPeriod" ColumnName="EndPeriod" />
+          <ScalarProperty Name="StartPeriod" ColumnName="StartPeriod" />
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="PayitemID" ColumnName="PayitemID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="AdvanceID" ColumnName="AdvanceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalaryAdvanceHistories">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SalaryAdvanceHistory">
+        <MappingFragment StoreEntitySet="SalaryAdvanceHistory">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="endorsedOn" ColumnName="endorsedOn" />
+          <ScalarProperty Name="endorsedBy" ColumnName="endorsedBy" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="repaymentAmount" ColumnName="repaymentAmount" />
+          <ScalarProperty Name="EndPeriod" ColumnName="EndPeriod" />
+          <ScalarProperty Name="StartPeriod" ColumnName="StartPeriod" />
+          <ScalarProperty Name="AdvanceAmount" ColumnName="AdvanceAmount" />
+          <ScalarProperty Name="PayitemID" ColumnName="PayitemID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="AdvanceID" ColumnName="AdvanceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalaryArrears">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SalaryArrear">
+        <MappingFragment StoreEntitySet="SalaryArrears">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="endorsedOn" ColumnName="endorsedOn" />
+          <ScalarProperty Name="endorsedBy" ColumnName="endorsedBy" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="repaymentAmount" ColumnName="repaymentAmount" />
+          <ScalarProperty Name="EndPeriod" ColumnName="EndPeriod" />
+          <ScalarProperty Name="StartPeriod" ColumnName="StartPeriod" />
+          <ScalarProperty Name="ArrearsAmount" ColumnName="ArrearsAmount" />
+          <ScalarProperty Name="arrearAssignID" ColumnName="arrearAssignID" />
+          <ScalarProperty Name="PayitemID" ColumnName="PayitemID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ArrearsID" ColumnName="ArrearsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalaryArrearsHistories">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SalaryArrearsHistory">
+        <MappingFragment StoreEntitySet="SalaryArrearsHistory">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="endorsedOn" ColumnName="endorsedOn" />
+          <ScalarProperty Name="endorsedBy" ColumnName="endorsedBy" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="repaymentAmount" ColumnName="repaymentAmount" />
+          <ScalarProperty Name="EndPeriod" ColumnName="EndPeriod" />
+          <ScalarProperty Name="StartPeriod" ColumnName="StartPeriod" />
+          <ScalarProperty Name="ArrearsAmount" ColumnName="ArrearsAmount" />
+          <ScalarProperty Name="arrearAssignID" ColumnName="arrearAssignID" />
+          <ScalarProperty Name="PayitemID" ColumnName="PayitemID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ArrearsID" ColumnName="ArrearsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sectors">
+      <EntityTypeMapping TypeName="SsepsIISynModel.Sector">
+        <MappingFragment StoreEntitySet="Sector">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="sectorName" ColumnName="sectorName" />
+          <ScalarProperty Name="sectorCode" ColumnName="sectorCode" />
+          <ScalarProperty Name="sectorID" ColumnName="sectorID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SITE_CONFIG">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SITE_CONFIG">
+        <MappingFragment StoreEntitySet="SITE_CONFIG">
+          <ScalarProperty Name="CONFIG_VALUE" ColumnName="CONFIG_VALUE" />
+          <ScalarProperty Name="CONFIG_KEY" ColumnName="CONFIG_KEY" />
+          <ScalarProperty Name="SITE_CONFIG_ID" ColumnName="SITE_CONFIG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SSEPS_CONFIG">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SSEPS_CONFIG">
+        <MappingFragment StoreEntitySet="SSEPS_CONFIG">
+          <ScalarProperty Name="CONFIG_TYPE" ColumnName="CONFIG_TYPE" />
+          <ScalarProperty Name="CONFIG_VALUE" ColumnName="CONFIG_VALUE" />
+          <ScalarProperty Name="CONFIG_KEY" ColumnName="CONFIG_KEY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SSEPS_Organized_Forces">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SSEPS_Organized_Forces">
+        <MappingFragment StoreEntitySet="SSEPS_Organized_Forces">
+          <ScalarProperty Name="EstablishmentNo" ColumnName="EstablishmentNo" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="DateOfFirstAppointment" ColumnName="DateOfFirstAppointment" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankId" ColumnName="BankId" />
+          <ScalarProperty Name="PayMethod" ColumnName="PayMethod" />
+          <ScalarProperty Name="PayScaleName" ColumnName="PayScaleName" />
+          <ScalarProperty Name="PayscaleID" ColumnName="PayscaleID" />
+          <ScalarProperty Name="MdaName" ColumnName="MdaName" />
+          <ScalarProperty Name="MdaID" ColumnName="MdaID" />
+          <ScalarProperty Name="DirectorateName" ColumnName="DirectorateName" />
+          <ScalarProperty Name="DirectorateID" ColumnName="DirectorateID" />
+          <ScalarProperty Name="IncrementPoint" ColumnName="IncrementPoint" />
+          <ScalarProperty Name="PayGrade" ColumnName="PayGrade" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobGradeClassification" ColumnName="JobGradeClassification" />
+          <ScalarProperty Name="IsPensionable" ColumnName="IsPensionable" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="PostNo" ColumnName="PostNo" />
+          <ScalarProperty Name="PageNo" ColumnName="PageNo" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EmployeePIN" ColumnName="EmployeePIN" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SSEPSRules">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SSEPSRule">
+        <MappingFragment StoreEntitySet="SSEPSRule">
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="formulaText" ColumnName="formulaText" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="payItemID" ColumnName="payItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SsepsIISynModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -553,6 +937,157 @@
           <ScalarProperty Name="SystemPermissionId" ColumnName="SystemPermissionId" />
           <ScalarProperty Name="SystemRoleId" ColumnName="SystemRoleId" />
           <ScalarProperty Name="SystemRolePermissionId" ColumnName="SystemRolePermissionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUsers">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SystemUser">
+        <MappingFragment StoreEntitySet="SystemUser">
+          <ScalarProperty Name="LogRefId" ColumnName="LogRefId" />
+          <ScalarProperty Name="WhoModified" ColumnName="WhoModified" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="UserLoginCount" ColumnName="UserLoginCount" />
+          <ScalarProperty Name="LastIpAddress" ColumnName="LastIpAddress" />
+          <ScalarProperty Name="Locked" ColumnName="Locked" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+          <ScalarProperty Name="GivenName" ColumnName="GivenName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="SystemUserId" ColumnName="SystemUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUserMdas">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SystemUserMda">
+        <MappingFragment StoreEntitySet="SystemUserMda">
+          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MdaId" ColumnName="MdaId" />
+          <ScalarProperty Name="SystemUserId" ColumnName="SystemUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUserRoles">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SystemUserRole">
+        <MappingFragment StoreEntitySet="SystemUserRole">
+          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="SystemRoleId" ColumnName="SystemRoleId" />
+          <ScalarProperty Name="SystemUserId" ColumnName="SystemUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUserSupervisedMdas">
+      <EntityTypeMapping TypeName="SsepsIISynModel.SystemUserSupervisedMda">
+        <MappingFragment StoreEntitySet="SystemUserSupervisedMda">
+          <ScalarProperty Name="WhoCreated" ColumnName="WhoCreated" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="MdaId" ColumnName="MdaId" />
+          <ScalarProperty Name="SystemUserId" ColumnName="SystemUserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransDatas">
+      <EntityTypeMapping TypeName="SsepsIISynModel.TransData">
+        <MappingFragment StoreEntitySet="TransData">
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="MdaId" ColumnName="MdaId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="SyncPeriod" ColumnName="SyncPeriod" />
+          <ScalarProperty Name="LogRefID" ColumnName="LogRefID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="NewValues" ColumnName="NewValues" />
+          <ScalarProperty Name="OldValues" ColumnName="OldValues" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransferredEmployees">
+      <EntityTypeMapping TypeName="SsepsIISynModel.TransferredEmployee">
+        <MappingFragment StoreEntitySet="TransferredEmployee">
+          <ScalarProperty Name="whoUpdated" ColumnName="whoUpdated" />
+          <ScalarProperty Name="dateUpdated" ColumnName="dateUpdated" />
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="AuthorizedOn" ColumnName="AuthorizedOn" />
+          <ScalarProperty Name="AuthorizedBy" ColumnName="AuthorizedBy" />
+          <ScalarProperty Name="FromMDAID" ColumnName="FromMDAID" />
+          <ScalarProperty Name="ToMDAID" ColumnName="ToMDAID" />
+          <ScalarProperty Name="ToGrade" ColumnName="ToGrade" />
+          <ScalarProperty Name="TransferState" ColumnName="TransferState" />
+          <ScalarProperty Name="StartPeriodDestination" ColumnName="StartPeriodDestination" />
+          <ScalarProperty Name="FromGrade" ColumnName="FromGrade" />
+          <ScalarProperty Name="FromDirectorateId" ColumnName="FromDirectorateId" />
+          <ScalarProperty Name="TransferDirection" ColumnName="TransferDirection" />
+          <ScalarProperty Name="TransferXML" ColumnName="TransferXML" />
+          <ScalarProperty Name="TransferReason" ColumnName="TransferReason" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransLogs">
+      <EntityTypeMapping TypeName="SsepsIISynModel.TransLog">
+        <MappingFragment StoreEntitySet="TransLog">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SyncPeriod" ColumnName="SyncPeriod" />
+          <ScalarProperty Name="IsSynched" ColumnName="IsSynched" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="ColumnKey" ColumnName="ColumnKey" />
+          <ScalarProperty Name="ColumnName" ColumnName="ColumnName" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="TransLogID" ColumnName="TransLogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WHTPayrollHistories">
+      <EntityTypeMapping TypeName="SsepsIISynModel.WHTPayrollHistory">
+        <MappingFragment StoreEntitySet="WHTPayrollHistory">
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="payItemsXMLGOV" ColumnName="payItemsXMLGOV" />
+          <ScalarProperty Name="payItemsXMLMDA" ColumnName="payItemsXMLMDA" />
+          <ScalarProperty Name="payItemsXMLDIR" ColumnName="payItemsXMLDIR" />
+          <ScalarProperty Name="payrollDate" ColumnName="payrollDate" />
+          <ScalarProperty Name="directorateID" ColumnName="directorateID" />
+          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
+          <ScalarProperty Name="governmentID" ColumnName="governmentID" />
+          <ScalarProperty Name="payrollPeriod" ColumnName="payrollPeriod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WHTPayrollHistoryTemps">
+      <EntityTypeMapping TypeName="SsepsIISynModel.WHTPayrollHistoryTemp">
+        <MappingFragment StoreEntitySet="WHTPayrollHistoryTemp">
+          <ScalarProperty Name="whoCreated" ColumnName="whoCreated" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="payItemsXMLGOV" ColumnName="payItemsXMLGOV" />
+          <ScalarProperty Name="payItemsXMLMDA" ColumnName="payItemsXMLMDA" />
+          <ScalarProperty Name="payItemsXMLDIR" ColumnName="payItemsXMLDIR" />
+          <ScalarProperty Name="payrollDate" ColumnName="payrollDate" />
+          <ScalarProperty Name="directorateID" ColumnName="directorateID" />
+          <ScalarProperty Name="mdaID" ColumnName="mdaID" />
+          <ScalarProperty Name="governmentID" ColumnName="governmentID" />
+          <ScalarProperty Name="payrollPeriod" ColumnName="payrollPeriod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="SsepsIISynModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="Government" ColumnName="Government" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

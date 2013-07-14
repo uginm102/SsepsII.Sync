@@ -19,7 +19,7 @@ namespace SsepsII.Synchronisation.DAL
         public System.DateTime DateCreated { get; set; }
         public string WhoCreated { get; set; }
     
-        public virtual SystemUser SystemUser { get; set; }
         public virtual SystemRole SystemRole { get; set; }
+        public virtual SystemUser SystemUser { get; set; }
     }
 }

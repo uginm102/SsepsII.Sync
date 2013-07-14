@@ -14,23 +14,22 @@ namespace SsepsII.Synchronisation.DAL
     
     public partial class TransferredEmployee
     {
-        public int TransferredEmployeeId { get; set; }
         public long EmployeeID { get; set; }
         public string TransferReason { get; set; }
-        public bool IsPermanent { get; set; }
         public string TransferXML { get; set; }
         public string TransferDirection { get; set; }
-        public Nullable<int> FromDirectorateId { get; set; }
-        public Nullable<int> FromGrade { get; set; }
-        public Nullable<int> ToGrade { get; set; }
-        public Nullable<int> ToMDAID { get; set; }
+        public int FromDirectorateId { get; set; }
+        public int FromGrade { get; set; }
+        public int StartPeriodDestination { get; set; }
+        public int TransferState { get; set; }
+        public int ToGrade { get; set; }
+        public int ToMDAID { get; set; }
+        public int FromMDAID { get; set; }
         public string AuthorizedBy { get; set; }
         public System.DateTime AuthorizedOn { get; set; }
         public System.DateTime dateCreated { get; set; }
         public string whoCreated { get; set; }
-    
-        public virtual Employee Employee { get; set; }
-        public virtual MdaGovernmentMapping MdaGovernmentMapping { get; set; }
-        public virtual DirectorateListing DirectorateListing { get; set; }
+        public Nullable<System.DateTime> dateUpdated { get; set; }
+        public string whoUpdated { get; set; }
     }
 }

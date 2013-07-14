@@ -16,9 +16,21 @@ namespace SsepsII.Synchronisation.DAL
     {
         public PayItem()
         {
+            this.ArrearsAssignments = new HashSet<ArrearsAssignment>();
+            this.EmployeeAttendances = new HashSet<EmployeeAttendance>();
+            this.EmployeeAttendanceHistories = new HashSet<EmployeeAttendanceHistory>();
             this.EmployeeEvents = new HashSet<EmployeeEvent>();
+            this.EmployeeEventHistories = new HashSet<EmployeeEventHistory>();
+            this.EmployeeOvertimes = new HashSet<EmployeeOvertime>();
+            this.EmployeeOvertimeHistories = new HashSet<EmployeeOvertimeHistory>();
             this.EmployeePayItems = new HashSet<EmployeePayItem>();
+            this.PayItemGovernmentMappings = new HashSet<PayItemGovernmentMapping>();
+            this.PayItemGradeMappings = new HashSet<PayItemGradeMapping>();
             this.PayItemMDAStructureMappings = new HashSet<PayItemMDAStructureMapping>();
+            this.SalaryAdvances = new HashSet<SalaryAdvance>();
+            this.SalaryAdvanceHistories = new HashSet<SalaryAdvanceHistory>();
+            this.SalaryArrears = new HashSet<SalaryArrear>();
+            this.SalaryArrearsHistories = new HashSet<SalaryArrearsHistory>();
         }
     
         public int payItemID { get; set; }
@@ -40,8 +52,21 @@ namespace SsepsII.Synchronisation.DAL
         public string whoUpdated { get; set; }
         public string LogRefID { get; set; }
     
+        public virtual ICollection<ArrearsAssignment> ArrearsAssignments { get; set; }
+        public virtual ICollection<EmployeeAttendance> EmployeeAttendances { get; set; }
+        public virtual ICollection<EmployeeAttendanceHistory> EmployeeAttendanceHistories { get; set; }
         public virtual ICollection<EmployeeEvent> EmployeeEvents { get; set; }
+        public virtual ICollection<EmployeeEventHistory> EmployeeEventHistories { get; set; }
+        public virtual ICollection<EmployeeOvertime> EmployeeOvertimes { get; set; }
+        public virtual ICollection<EmployeeOvertimeHistory> EmployeeOvertimeHistories { get; set; }
         public virtual ICollection<EmployeePayItem> EmployeePayItems { get; set; }
+        public virtual ICollection<PayItemGovernmentMapping> PayItemGovernmentMappings { get; set; }
+        public virtual ICollection<PayItemGradeMapping> PayItemGradeMappings { get; set; }
         public virtual ICollection<PayItemMDAStructureMapping> PayItemMDAStructureMappings { get; set; }
+        public virtual ICollection<SalaryAdvance> SalaryAdvances { get; set; }
+        public virtual ICollection<SalaryAdvanceHistory> SalaryAdvanceHistories { get; set; }
+        public virtual ICollection<SalaryArrear> SalaryArrears { get; set; }
+        public virtual ICollection<SalaryArrearsHistory> SalaryArrearsHistories { get; set; }
+        public virtual SSEPSRule SSEPSRule { get; set; }
     }
 }

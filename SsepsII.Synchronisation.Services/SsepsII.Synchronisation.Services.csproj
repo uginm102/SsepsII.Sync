@@ -46,8 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApprovalBO.cs" />
-    <Compile Include="ApprovalNodeBO.cs" />
     <Compile Include="ApprovalRowBO.cs" />
     <Compile Include="ConfigServices.cs" />
     <Compile Include="Constant.cs" />
@@ -60,7 +58,6 @@
     <Compile Include="MDAConfigServices.cs" />
     <Compile Include="MDAListObj.cs" />
     <Compile Include="MdaServices.cs" />
-    <Compile Include="MyConnectionString.cs" />
     <Compile Include="NetworkServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Encryption\EncryptionService.cs" />

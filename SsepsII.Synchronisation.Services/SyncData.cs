@@ -194,7 +194,7 @@ namespace SsepsII.Synchronisation.Services
                 assignmentHistory.authorisedBy = oldAttributes.GetNamedItem("authorisedBy").Value;
                 assignmentHistory.authorisedOn = DateTime.Parse(oldAttributes.GetNamedItem("authorisedOn").Value);
                 assignmentHistory.eventId = int.Parse(oldAttributes.GetNamedItem("eventId").Value);
-                assignmentHistory.workflowComplete = int.Parse(oldAttributes.GetNamedItem("workflowComplete").Value);
+                assignmentHistory.assignmentState = int.Parse(oldAttributes.GetNamedItem("assignmentState").Value);
                 assignmentHistory.dateCreated = DateTime.Parse(oldAttributes.GetNamedItem("dateCreated").Value);
                 if (oldAttributes.GetNamedItem("dateUpdated") != null) assignmentHistory.dateUpdated = DateTime.Parse(oldAttributes.GetNamedItem("dateUpdated").Value);
                 assignmentHistory.whoCreated = oldAttributes.GetNamedItem("whoCreated").Value;
@@ -255,13 +255,12 @@ namespace SsepsII.Synchronisation.Services
                 assignment.authorisedBy = attributes.GetNamedItem("authorisedBy").Value;
                 assignment.authorisedOn = DateTime.Parse(attributes.GetNamedItem("authorisedOn").Value);
                 assignment.eventId = int.Parse(attributes.GetNamedItem("eventId").Value);
-                assignment.workflowComplete = int.Parse(attributes.GetNamedItem("workflowComplete").Value);
+                assignment.assignmentState = int.Parse(attributes.GetNamedItem("assignmentState").Value);
                 assignment.dateCreated = DateTime.Parse(attributes.GetNamedItem("dateCreated").Value);
                 if (attributes.GetNamedItem("dateUpdated") != null) assignment.dateUpdated = DateTime.Parse(attributes.GetNamedItem("dateUpdated").Value);
                 assignment.whoCreated = attributes.GetNamedItem("whoCreated").Value;
                 if (attributes.GetNamedItem("whoUpdated") != null) assignment.whoUpdated = attributes.GetNamedItem("whoUpdated").Value;
                 if (attributes.GetNamedItem("LogRefID") != null) assignment.LogRefID = attributes.GetNamedItem("LogRefID").Value;
-
                 ents.Database.ExecuteSqlCommand("DISABLE TRIGGER dbo.EmployeeAssignmentEventLog ON dbo.EmployeeAssignment");
                 if (!exists) ents.EmployeeAssignments.Add(assignment);
                 ents.SaveChanges();
@@ -320,7 +319,7 @@ namespace SsepsII.Synchronisation.Services
                     assignment.authorisedBy = attributes.GetNamedItem("authorisedBy").Value;
                     assignment.authorisedOn = DateTime.Parse(attributes.GetNamedItem("authorisedOn").Value);
                     assignment.eventId = int.Parse(attributes.GetNamedItem("eventId").Value);
-                    assignment.workflowComplete = int.Parse(attributes.GetNamedItem("workflowComplete").Value);
+                    assignment.assignmentState = int.Parse(attributes.GetNamedItem("assignmentState").Value);
                     assignment.dateCreated = DateTime.Parse(attributes.GetNamedItem("dateCreated").Value);
                     if (attributes.GetNamedItem("dateUpdated") != null) assignment.dateUpdated = DateTime.Parse(attributes.GetNamedItem("dateUpdated").Value);
                     assignment.whoCreated = attributes.GetNamedItem("whoCreated").Value;
@@ -397,83 +396,46 @@ namespace SsepsII.Synchronisation.Services
         {
             using (SsepsIISynEntities ents = new SsepsIISynEntities())
             {
-                foreach (TransData table in Tables.Where(x => x.TableName == Constant.EMPLOYEE_PAYITEM_TABLE && x.ActionType == Constant.TRANSDATA_ACTION_TYPE_INSERT))
+                foreach (TransData table in Tables.Where(x => x.TableName == Constant.EMPLOYEE_PAYITEM_TABLE))
                 {
-                    //Remove all those inserted
-                    XmlAttributeCollection attributes = table.GetNewAttributesFromXml();
-                    int payItemId = int.Parse(attributes.GetNamedItem("payItemID").Value);
-                    EmployeePayItem payItem = ents.EmployeePayItems.Single(x => x.EmployeeID == EmployeeId && x.payItemID == payItemId);
-                    ents.EmployeePayItems.Remove(payItem);
+
+                    switch (table.ActionType)
+                    {
+                        case Constant.TRANSDATA_ACTION_TYPE_INSERT:
+                            //Remove all those inserted
+                            XmlAttributeCollection attributes = table.GetNewAttributesFromXml();
+                            int payItemId = int.Parse(attributes.GetNamedItem("payItemID").Value);
+                            EmployeePayItem payItem = ents.EmployeePayItems.Single(x => x.EmployeeID == EmployeeId && x.payItemID == payItemId);
+                            ents.EmployeePayItems.Remove(payItem);
+                            break;
+                        case Constant.TRANSDATA_ACTION_TYPE_DELETE:
+                            //Restore the deleted ones
+
+                            XmlAttributeCollection attributesOld = table.GetOldAttributesFromXml();
+                            EmployeePayItem payItemOld = new EmployeePayItem();
+
+                            payItemOld.EmployeeID = EmployeeId;
+                            payItemOld.payItemID = int.Parse(attributesOld.GetNamedItem("payItemID").Value);
+                            if (attributesOld.GetNamedItem("startPeriod") != null) payItemOld.startPeriod = int.Parse(attributesOld.GetNamedItem("startPeriod").Value);
+                            if (attributesOld.GetNamedItem("endPeriod") != null) payItemOld.endPeriod = int.Parse(attributesOld.GetNamedItem("endPeriod").Value);
+                            if (attributesOld.GetNamedItem("paramValue") != null) payItemOld.paramValue = double.Parse(attributesOld.GetNamedItem("paramValue").Value);
+                            payItemOld.dateCreated = DateTime.Parse(attributesOld.GetNamedItem("dateCreated").Value);
+                            if (attributesOld.GetNamedItem("dateUpdated") != null) payItemOld.dateUpdated = DateTime.Parse(attributesOld.GetNamedItem("dateUpdated").Value);
+                            payItemOld.whoCreated = attributesOld.GetNamedItem("whoCreated").Value;
+                            if (attributesOld.GetNamedItem("whoUpdated") != null) payItemOld.whoUpdated = attributesOld.GetNamedItem("whoUpdated").Value;
+                            if (attributesOld.GetNamedItem("LogRefID") != null) payItemOld.LogRefID = attributesOld.GetNamedItem("LogRefID").Value;
+                            ents.EmployeePayItems.Add(payItemOld);
+                            break;
+                    }
 
                     ents.Database.ExecuteSqlCommand("DISABLE TRIGGER dbo.EmployeePayItemEventLog ON dbo.EmployeePayItem");
 
                     ents.SaveChanges();
 
                     ents.Database.ExecuteSqlCommand("ENABLE TRIGGER dbo.EmployeePayItemEventLog ON dbo.EmployeePayItem");
-                }
-                foreach (TransData table in Tables.Where(x => x.TableName == Constant.EMPLOYEE_PAYITEM_TABLE && x.ActionType == Constant.TRANSDATA_ACTION_TYPE_DELETE))
-                {
-                    //Restore the deleted ones
-
-                    XmlAttributeCollection attributesOld = table.GetOldAttributesFromXml();
-                    EmployeePayItem payItemOld = new EmployeePayItem();
-
-                    payItemOld.EmployeeID = EmployeeId;
-                    payItemOld.payItemID = int.Parse(attributesOld.GetNamedItem("payItemID").Value);
-                    if (attributesOld.GetNamedItem("startPeriod") != null) payItemOld.startPeriod = int.Parse(attributesOld.GetNamedItem("startPeriod").Value);
-                    if (attributesOld.GetNamedItem("endPeriod") != null) payItemOld.endPeriod = int.Parse(attributesOld.GetNamedItem("endPeriod").Value);
-                    if (attributesOld.GetNamedItem("paramValue") != null) payItemOld.paramValue = double.Parse(attributesOld.GetNamedItem("paramValue").Value);
-                    payItemOld.dateCreated = DateTime.Parse(attributesOld.GetNamedItem("dateCreated").Value);
-                    if (attributesOld.GetNamedItem("dateUpdated") != null) payItemOld.dateUpdated = DateTime.Parse(attributesOld.GetNamedItem("dateUpdated").Value);
-                    payItemOld.whoCreated = attributesOld.GetNamedItem("whoCreated").Value;
-                    if (attributesOld.GetNamedItem("whoUpdated") != null) payItemOld.whoUpdated = attributesOld.GetNamedItem("whoUpdated").Value;
-                    if (attributesOld.GetNamedItem("LogRefID") != null) payItemOld.LogRefID = attributesOld.GetNamedItem("LogRefID").Value;
-                    ents.EmployeePayItems.Add(payItemOld);
-
-                    ents.Database.ExecuteSqlCommand("DISABLE TRIGGER dbo.EmployeePayItemEventLog ON dbo.EmployeePayItem");
-
-                    ents.SaveChanges();
-
-                    ents.Database.ExecuteSqlCommand("ENABLE TRIGGER dbo.EmployeePayItemEventLog ON dbo.EmployeePayItem");
 
                 }
-                    //switch (table.ActionType)
-                    //{
-                    //    case Constant.TRANSDATA_ACTION_TYPE_INSERT:
-                    //        //Remove all those inserted
-                    //        XmlAttributeCollection attributes = table.GetNewAttributesFromXml();
-                    //        int payItemId = int.Parse(attributes.GetNamedItem("payItemID").Value);
-                    //        EmployeePayItem payItem = ents.EmployeePayItems.Single(x => x.EmployeeID == EmployeeId && x.payItemID == payItemId);
-                    //        ents.EmployeePayItems.Remove(payItem);
-                    //        break;
-                    //    case Constant.TRANSDATA_ACTION_TYPE_DELETE:
-                    //        //Restore the deleted ones
-
-                    //        XmlAttributeCollection attributesOld = table.GetOldAttributesFromXml();
-                    //        EmployeePayItem payItemOld = new EmployeePayItem();
-
-                    //        payItemOld.EmployeeID = EmployeeId;
-                    //        payItemOld.payItemID = int.Parse(attributesOld.GetNamedItem("payItemID").Value);
-                    //        if (attributesOld.GetNamedItem("startPeriod") != null) payItemOld.startPeriod = int.Parse(attributesOld.GetNamedItem("startPeriod").Value);
-                    //        if (attributesOld.GetNamedItem("endPeriod") != null) payItemOld.endPeriod = int.Parse(attributesOld.GetNamedItem("endPeriod").Value);
-                    //        if (attributesOld.GetNamedItem("paramValue") != null) payItemOld.paramValue = double.Parse(attributesOld.GetNamedItem("paramValue").Value);
-                    //        payItemOld.dateCreated = DateTime.Parse(attributesOld.GetNamedItem("dateCreated").Value);
-                    //        if (attributesOld.GetNamedItem("dateUpdated") != null) payItemOld.dateUpdated = DateTime.Parse(attributesOld.GetNamedItem("dateUpdated").Value);
-                    //        payItemOld.whoCreated = attributesOld.GetNamedItem("whoCreated").Value;
-                    //        if (attributesOld.GetNamedItem("whoUpdated") != null) payItemOld.whoUpdated = attributesOld.GetNamedItem("whoUpdated").Value;
-                    //        if (attributesOld.GetNamedItem("LogRefID") != null) payItemOld.LogRefID = attributesOld.GetNamedItem("LogRefID").Value;
-                    //        ents.EmployeePayItems.Add(payItemOld);
-                    //        break;
-                    //}
-
-                    //ents.Database.ExecuteSqlCommand("DISABLE TRIGGER dbo.EmployeePayItemEventLog ON dbo.EmployeePayItem");
-
-                    //ents.SaveChanges();
-
-                    //ents.Database.ExecuteSqlCommand("ENABLE TRIGGER dbo.EmployeePayItemEventLog ON dbo.EmployeePayItem");
-
-                }
-            
+            }
         }
 
         public void InsertEmployeeBankAccount()

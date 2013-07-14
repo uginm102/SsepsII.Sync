@@ -21,15 +21,15 @@ namespace SsepsII.Synchronisation.Services
         {
             using (SsepsIISynEntities ents = new SsepsIISynEntities())
             {
-                Log log = new Log();
-                log.Message = message;
-                log.Level = level;
-                log.Exception = exception;
-                log.WhoCreated = username;
-                log.DateCreated = DateTime.Now;
+                //Log log = new Log();
+                //log.Message = message;
+                //log.Level = level;
+                //log.Exception = exception;
+                //log.WhoCreated = username;
+                //log.DateCreated = DateTime.Now;
 
-                ents.Logs.Add(log);
-                ents.SaveChanges();
+                //ents.Logs.Add(log);
+                //ents.SaveChanges();
             }
         }
 

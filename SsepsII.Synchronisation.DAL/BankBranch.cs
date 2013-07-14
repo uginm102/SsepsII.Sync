@@ -33,6 +33,7 @@ namespace SsepsII.Synchronisation.DAL
         public string whoUpdated { get; set; }
         public string LogRefID { get; set; }
     
+        public virtual Bank Bank { get; set; }
         public virtual ICollection<EmployeeBankAccount> EmployeeBankAccounts { get; set; }
     }
 }

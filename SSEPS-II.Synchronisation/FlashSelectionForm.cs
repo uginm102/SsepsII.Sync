@@ -19,6 +19,7 @@ namespace SSEPS_II.Synchronisation
 
         public bool HasSsepsFolder = false;
         public string DrivePath = string.Empty;
+        public string DriveName = string.Empty;
 
         public FlashSelectionForm()
         {
@@ -62,7 +63,9 @@ namespace SSEPS_II.Synchronisation
 
         void Medium_MouseClick(object sender, MouseEventArgs e)
         {
-            DrivePath = (sender as RadioButton).Text;
+            string[] driveInfo = (sender as RadioButton).Text.Split('\\');
+            if(driveInfo.Count() > 0) DrivePath = string.Format("{0}\\", driveInfo[0]);
+            if (driveInfo.Count() > 1) DriveName = driveInfo[1];
             //TODO we can add it to the tag if this is slow
             if ((sender as RadioButton).Parent.Name == _panelSsepsMedium.Name || (sender as RadioButton).Parent.Name == _panelPreviousMedium.Name)
             {

@@ -25,37 +25,68 @@ namespace SsepsII.Synchronisation.DAL
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<ArrearsAssignment> ArrearsAssignments { get; set; }
+        public DbSet<Bank> Banks { get; set; }
+        public DbSet<BankBranch> BankBranches { get; set; }
+        public DbSet<Budget> Budgets { get; set; }
+        public DbSet<DirectorateListing> DirectorateListings { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeAssignment> EmployeeAssignments { get; set; }
+        public DbSet<EmployeeAssignmentEvidence> EmployeeAssignmentEvidences { get; set; }
+        public DbSet<EmployeeAssignmentHistory> EmployeeAssignmentHistories { get; set; }
+        public DbSet<EmployeeAttendance> EmployeeAttendances { get; set; }
+        public DbSet<EmployeeAttendanceHistory> EmployeeAttendanceHistories { get; set; }
+        public DbSet<EmployeeBankAccount> EmployeeBankAccounts { get; set; }
         public DbSet<EmployeeEvent> EmployeeEvents { get; set; }
+        public DbSet<EmployeeEventHistory> EmployeeEventHistories { get; set; }
+        public DbSet<EmployeeOvertime> EmployeeOvertimes { get; set; }
+        public DbSet<EmployeeOvertimeHistory> EmployeeOvertimeHistories { get; set; }
         public DbSet<EmployeePayItem> EmployeePayItems { get; set; }
         public DbSet<EmployeePayroll> EmployeePayrolls { get; set; }
         public DbSet<EmployeePayrollHistory> EmployeePayrollHistories { get; set; }
+        public DbSet<EmployeePhoto> EmployeePhotoes { get; set; }
+        public DbSet<FinanceDirectorateListing> FinanceDirectorateListings { get; set; }
+        public DbSet<Government> Governments { get; set; }
         public DbSet<InstallationConfig> InstallationConfigs { get; set; }
+        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Job1> Jobs1 { get; set; }
         public DbSet<ListItem> ListItems { get; set; }
         public DbSet<ListType> ListTypes { get; set; }
-        public DbSet<Log> Logs { get; set; }
         public DbSet<MDA_CONFIG> MDA_CONFIG { get; set; }
         public DbSet<MdaGovernmentMapping> MdaGovernmentMappings { get; set; }
         public DbSet<MdaStructure> MdaStructures { get; set; }
+        public DbSet<MdaStructurePayScaleMapping> MdaStructurePayScaleMappings { get; set; }
+        public DbSet<NominalRoll> NominalRolls { get; set; }
+        public DbSet<NominalRollHistory> NominalRollHistories { get; set; }
+        public DbSet<PayGrade> PayGrades { get; set; }
+        public DbSet<PayItem> PayItems { get; set; }
+        public DbSet<PayItemGovernmentMapping> PayItemGovernmentMappings { get; set; }
+        public DbSet<PayItemGradeMapping> PayItemGradeMappings { get; set; }
+        public DbSet<PayItemMDAStructureMapping> PayItemMDAStructureMappings { get; set; }
+        public DbSet<PayScale> PayScales { get; set; }
+        public DbSet<PayStatusChange> PayStatusChanges { get; set; }
+        public DbSet<SalaryAdvance> SalaryAdvances { get; set; }
+        public DbSet<SalaryAdvanceHistory> SalaryAdvanceHistories { get; set; }
+        public DbSet<SalaryArrear> SalaryArrears { get; set; }
+        public DbSet<SalaryArrearsHistory> SalaryArrearsHistories { get; set; }
+        public DbSet<Sector> Sectors { get; set; }
         public DbSet<SITE_CONFIG> SITE_CONFIG { get; set; }
         public DbSet<SSEPS_CONFIG> SSEPS_CONFIG { get; set; }
+        public DbSet<SSEPS_Organized_Forces> SSEPS_Organized_Forces { get; set; }
+        public DbSet<SSEPSRule> SSEPSRules { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
+        public DbSet<SystemPermission> SystemPermissions { get; set; }
+        public DbSet<SystemRole> SystemRoles { get; set; }
+        public DbSet<SystemRolePermission> SystemRolePermissions { get; set; }
         public DbSet<SystemUser> SystemUsers { get; set; }
         public DbSet<SystemUserMda> SystemUserMdas { get; set; }
         public DbSet<SystemUserRole> SystemUserRoles { get; set; }
         public DbSet<SystemUserSupervisedMda> SystemUserSupervisedMdas { get; set; }
         public DbSet<TransData> TransDatas { get; set; }
         public DbSet<TransferredEmployee> TransferredEmployees { get; set; }
-        public DbSet<PayItem> PayItems { get; set; }
-        public DbSet<PayItemMDAStructureMapping> PayItemMDAStructureMappings { get; set; }
-        public DbSet<Government> Governments { get; set; }
-        public DbSet<EmployeeAssignmentHistory> EmployeeAssignmentHistories { get; set; }
-        public DbSet<BankBranch> BankBranches { get; set; }
-        public DbSet<EmployeeBankAccount> EmployeeBankAccounts { get; set; }
+        public DbSet<TransLog> TransLogs { get; set; }
+        public DbSet<WHTPayrollHistory> WHTPayrollHistories { get; set; }
+        public DbSet<WHTPayrollHistoryTemp> WHTPayrollHistoryTemps { get; set; }
         public DbSet<State> States { get; set; }
-        public DbSet<DirectorateListing> DirectorateListings { get; set; }
-        public DbSet<SystemPermission> SystemPermissions { get; set; }
-        public DbSet<SystemRole> SystemRoles { get; set; }
-        public DbSet<SystemRolePermission> SystemRolePermissions { get; set; }
     }
 }

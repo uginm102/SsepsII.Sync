@@ -14,11 +14,6 @@ namespace SsepsII.Synchronisation.DAL
     
     public partial class DirectorateListing
     {
-        public DirectorateListing()
-        {
-            this.TransferredEmployees = new HashSet<TransferredEmployee>();
-        }
-    
         public int directorateID { get; set; }
         public Nullable<int> financeDirectorateID { get; set; }
         public string directorateCode { get; set; }
@@ -32,6 +27,5 @@ namespace SsepsII.Synchronisation.DAL
         public string whoUpdated { get; set; }
     
         public virtual MdaGovernmentMapping MdaGovernmentMapping { get; set; }
-        public virtual ICollection<TransferredEmployee> TransferredEmployees { get; set; }
     }
 }

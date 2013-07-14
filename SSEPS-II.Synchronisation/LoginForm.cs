@@ -17,6 +17,7 @@ namespace SSEPS_II.Synchronisation
         public LoginForm(ConfigurationManager configManager)
         {
             InitializeComponent();
+            lblVersionNumber.Text = Application.ProductVersion;
             _configManager = configManager;
         }
 
