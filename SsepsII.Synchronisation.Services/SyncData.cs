@@ -52,11 +52,11 @@ namespace SsepsII.Synchronisation.Services
                     emp.EmployeeID = EmployeeId;
                 }
 
-                emp.prefix = attributes.GetNamedItem("prefix").Value;
+                if (attributes.GetNamedItem("prefix") != null) emp.prefix = attributes.GetNamedItem("prefix").Value;
+                if (attributes.GetNamedItem("gender") != null) emp.gender = attributes.GetNamedItem("gender").Value;
                 emp.surName = attributes.GetNamedItem("surName").Value;
                 emp.givenName = attributes.GetNamedItem("givenName").Value;
                 emp.otherNames = attributes.GetNamedItem("otherNames").Value;
-                emp.gender = attributes.GetNamedItem("gender").Value;
                 emp.dateofBirth = DateTime.Parse(attributes.GetNamedItem("dateofBirth").Value);
                 if (attributes.GetNamedItem("maritalStatus") != null) emp.maritalStatus = int.Parse(attributes.GetNamedItem("maritalStatus").Value);
                 if (attributes.GetNamedItem("EmployeePIN") != null) emp.EmployeePIN = attributes.GetNamedItem("EmployeePIN").Value;
@@ -111,11 +111,11 @@ namespace SsepsII.Synchronisation.Services
                     XmlAttributeCollection attributes = table.GetOldAttributesFromXml();
                     Employee emp = ents.Employees.Find(EmployeeId);
 
-                    emp.prefix = attributes.GetNamedItem("prefix").Value;
+                    if (attributes.GetNamedItem("prefix") != null) emp.prefix = attributes.GetNamedItem("prefix").Value;
+                    if (attributes.GetNamedItem("gender") != null) emp.gender = attributes.GetNamedItem("gender").Value;
                     emp.surName = attributes.GetNamedItem("surName").Value;
                     emp.givenName = attributes.GetNamedItem("givenName").Value;
                     emp.otherNames = attributes.GetNamedItem("otherNames").Value;
-                    emp.gender = attributes.GetNamedItem("gender").Value;
                     emp.dateofBirth = DateTime.Parse(attributes.GetNamedItem("dateofBirth").Value);
                     if (attributes.GetNamedItem("maritalStatus") != null) emp.maritalStatus = int.Parse(attributes.GetNamedItem("maritalStatus").Value);
                     if (attributes.GetNamedItem("EmployeePIN") != null) emp.EmployeePIN = attributes.GetNamedItem("EmployeePIN").Value;

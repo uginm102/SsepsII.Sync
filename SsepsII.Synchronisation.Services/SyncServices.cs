@@ -38,12 +38,9 @@ namespace SsepsII.Synchronisation.Services
             try
             {
                 string feedback = syncProxy.AuthenticateUser(header);
-                //TODO clean up LogServices.Log("SyncServices", "LoginRemoteService", feedback, user);
                 XDocument xDoc = XDocument.Parse(feedback);
 
-
                 if (!(bool)xDoc.Element("SecuredWebService").Attribute("success")) return false;
-
                 else
                 {
                     _tokenHeader.AuthenticatedToken = xDoc.Element("SecuredWebService").Element("token").Value;
@@ -52,10 +49,8 @@ namespace SsepsII.Synchronisation.Services
             }
             catch (EndpointNotFoundException ex)
             {
-                //TODO log this error LogServices.Log("SyncServices", "LoginRemoteService", ex.Message, user,2,ex.InnerException.Message);
                 return false;
             }
-
         }
 
         public bool SendSyncDataThroughLAN(SystemUser user)
@@ -96,7 +91,6 @@ namespace SsepsII.Synchronisation.Services
         {
             if (LoginRemoteService(user))
             {
-                //XDocument doc = GetDataToSyncSecure(user);
                 string feedback = syncProxy.ReceiveSyncTransaDataObjects(_tokenHeader, data, siteId);
                 XDocument xDoc = XDocument.Parse(feedback);
                 return (bool)xDoc.Element("SecuredWebService").Attribute("success");
@@ -161,17 +155,20 @@ namespace SsepsII.Synchronisation.Services
         public XDocument GetDataToSyncXML(SystemUser user)
         {
             List<TransData> dataToSync = GetDataToSync(user);
-            XDocument xDoc = new XDocument(new XDeclaration("1.0", "UTF-16", null), new XElement("Sync"));
+            XDocument xDoc = new XDocument(new XDeclaration("1.0", "UTF-16", null),
+                new XElement("Sync",
+                    new XElement("Sync-data"),
+                    new XElement("Consolidation-data")));
 
             foreach (TransData data in dataToSync)
             {
                 if (data.state == (int)SyncState.ConsolidateOnly)
                 {
-                    GetConsolidationData(xDoc, data);
+                    GetConsolidationData(xDoc.Element("Sync").Element("Consolidation-data"), data);
                 }
                 else
                 {
-                    GetSyncData(xDoc, data);
+                    GetSyncData(xDoc.Element("Sync").Element("Sync-data"), data);
                 }
             }
 
@@ -179,35 +176,21 @@ namespace SsepsII.Synchronisation.Services
             return xDoc;
         }
 
-        private void GetSyncData(XDocument xDoc, TransData data)
+        private void GetSyncData(XElement syncXElement, TransData data)
         {
-            if (!xDoc.Element("Sync").Elements("sync-data").Any()) xDoc.Element("Sync").Add(new XElement("sync-data"));
+            if (!syncXElement.Elements("MDA").Any()) syncXElement.Add(new XElement("MDA", new XAttribute("Id", data.MdaId)));
 
-            if (xDoc.Element("Sync").Elements("sync-data").Elements("MDA").Where(x => x.Attribute("Id").Value == data.MdaId.ToString()).Count() == 1)
+            XElement mdaXElement = syncXElement.Elements("MDA").FirstOrDefault(x => x.Attribute("Id").Value == data.MdaId.ToString());
+
+            if (mdaXElement != null)
             {
-                XElement mdaXElement = xDoc.Element("Sync").Elements("sync-data").Elements("MDA").FirstOrDefault(x => x.Attribute("Id").Value == data.MdaId.ToString());
-
-                if (mdaXElement != null)
-                {
-                    //XElement rows;
-                    //if (mdaXElement.Elements("Rows").Any())
-                    //    rows = mdaXElement.Element("Rows");
-                    //else mdaXElement.Add(rows = new XElement("Rows"));
-                    mdaXElement.Add(GetSyncDataRow(data));
-                }
-                else
-                {
-                    //We don't expect this to ever be null
-                    new MissingMemberException("Sync mda node");
-                }
+                mdaXElement.Add(GetSyncDataRow(data));
             }
             else
             {
-                //TODO we assume sync data will always be single
-                xDoc.Element("Sync").Element("MDAs").Element("sync-data").Add(
-                    new XElement("MDA", new XAttribute("Id", data.MdaId),
-                        new XElement("Period", data.SyncPeriod),
-                            new XElement("Rows", GetSyncDataRow(data))));
+                syncXElement.Add(
+                new XElement("MDA", new XAttribute("Id", data.MdaId),
+                    GetSyncDataRow(data)));
             }
         }
 
@@ -222,50 +205,48 @@ namespace SsepsII.Synchronisation.Services
                 new XElement("NewValues", data.NewValues),
                 new XElement("EmployeeID", data.EmployeeID),
                 new XElement("SyncPeriod", data.SyncPeriod),
+                new XElement("MdaId", data.MdaId),
                 new XElement("LogRefID", data.LogRefID),
                 new XElement("Username", data.Username),
                 new XElement("state", data.state)
                 );
         }
 
-        private void GetConsolidationData(XDocument xDoc, TransData data)
+        private void GetConsolidationData(XElement consolidationXElement, TransData data)
         {
 
-            if (!xDoc.Element("Sync").Elements("Consolidation-data").Any()) xDoc.Element("Sync").Add(new XElement("Consolidation-data"));
-            if (xDoc.Element("Sync").Element("Consolidation-data").Elements("MDA").Where(x => x.Attribute("Id").Value == data.MdaId.ToString()).Count() == 0)
+            if (!consolidationXElement.Elements("MDA").Any()) consolidationXElement.Add(new XElement("MDA", new XAttribute("Id", data.MdaId)));
+            XElement mdaConsolidationXElement = consolidationXElement.Elements("MDA").FirstOrDefault(x => x.Attribute("Id").Value == data.MdaId.ToString());
+            if (mdaConsolidationXElement == null)
             {
-                xDoc.Element("Sync").Element("Consolidation-data").Add(new XElement("MDA", new XAttribute("Id", data.MdaId)));
+                consolidationXElement.Add(mdaConsolidationXElement = new XElement("MDA", new XAttribute("Id", data.MdaId)));
             }
 
             //PayrollHistory
             if (data.TableName == Constant.EMPLOYEE_PAYROLLHISTORY_TABLE)
             {
-                GetEmployeePayrollHistoryData(xDoc, data);
+                GetEmployeePayrollHistoryData(mdaConsolidationXElement, data);
             }
         }
 
-        private void GetEmployeePayrollHistoryData(XDocument xDoc, TransData data)
+        private void GetEmployeePayrollHistoryData(XElement mdaConsolidationXElement, TransData data)
         {
-            XElement records;
-            if (xDoc.Element("Sync").Element("Consolidation-data").Elements("MDA").Elements(Constant.EMPLOYEE_PAYROLLHISTORY_TABLE)
+            if (!mdaConsolidationXElement.Elements(Constant.EMPLOYEE_PAYROLLHISTORY_TABLE).Any())
+                mdaConsolidationXElement.Add(new XElement(Constant.EMPLOYEE_PAYROLLHISTORY_TABLE, new XAttribute("SyncPeriod", data.SyncPeriod)));
+            if (mdaConsolidationXElement.Elements(Constant.EMPLOYEE_PAYROLLHISTORY_TABLE)
                 .Where(x => x.Attribute("SyncPeriod").Value == data.SyncPeriod.ToString()).Count() > 0) new ArgumentException(string.Format("Duplicate payroll periods for mda {0}", data.MdaId));
 
-            XElement payrollHistoryXElement = xDoc.Element("Sync").Element("Consolidation-data").Elements("MDA").FirstOrDefault(x => x.Attribute("Id").Value == data.MdaId.ToString());
-            payrollHistoryXElement.Add(records = new XElement(Constant.EMPLOYEE_PAYROLLHISTORY_TABLE, new XAttribute("SyncPeriod", data.SyncPeriod)));
-            if (payrollHistoryXElement != null)
+            XElement payrollHistoryXElement = mdaConsolidationXElement.Elements(Constant.EMPLOYEE_PAYROLLHISTORY_TABLE).FirstOrDefault(x => x.Attribute("SyncPeriod").Value == data.SyncPeriod.ToString());
+            if (payrollHistoryXElement == null) mdaConsolidationXElement.Add(payrollHistoryXElement = new XElement(Constant.EMPLOYEE_PAYROLLHISTORY_TABLE, new XAttribute("SyncPeriod", data.SyncPeriod)));
+
+            payrollHistoryXElement.Add(GetSyncDataRow(data));
+            using (SsepsIISynEntities ents = new SsepsIISynEntities())
             {
-                using (SsepsIISynEntities ents = new SsepsIISynEntities())
+                payrollHistoryXElement.Add(new XElement("History-data"));
+                foreach (EmployeePayrollHistory empPH in ents.EmployeePayrollHistories.Where(x => x.mdaID == data.MdaId && x.payrollPeriod == data.SyncPeriod).ToList())
                 {
-                    foreach (EmployeePayrollHistory empPH in ents.EmployeePayrollHistories.Where(x => x.mdaID == data.MdaId && x.payrollPeriod == data.SyncPeriod).ToList())
-                    {
-                        records.Add(new XElement(empPH.AsXmlRow));
-                    }
+                    payrollHistoryXElement.Element("History-data").Add(new XElement(empPH.AsXmlRow));
                 }
-            }
-            else
-            {
-                //We don't expect this to ever be null
-                new MissingMemberException("Sync mda node");
             }
         }
 
@@ -302,7 +283,7 @@ namespace SsepsII.Synchronisation.Services
                                 if (approvalStatusAccepted == null) new InvalidDataException("Sync Row not found on client machine");
                                 approvalStatusAccepted.state = (int)SyncState.Approved;
                                 pkApprovedData.Add(logRefID);
-                                approvalStatusAccepted.NewValues = rowElement.Element("newValue").ToString();
+                                approvalStatusAccepted.NewValues = rowElement.Element("newValue").FirstNode.ToString();
                                 break;
                             case (int)SyncState.SyncedConsolidateOnly:
                                 int mdaId = 0, syncPeriod = 0;
@@ -323,7 +304,7 @@ namespace SsepsII.Synchronisation.Services
                         TransferredEmployee transferredEmployee = ents.TransferredEmployees.Find(employeeId);
                         if (transferredEmployee != null)
                         {
-                            transferredEmployee.TransferState = (int)rowElement.Element("TransferState");
+                            transferredEmployee.TransferState = (int)rowElement.Element("state");
                             ents.SaveChanges();
                         }
                     }

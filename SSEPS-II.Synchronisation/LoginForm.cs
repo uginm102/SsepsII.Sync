@@ -25,9 +25,30 @@ namespace SSEPS_II.Synchronisation
         {
             using (WaitCursor wc = new WaitCursor())
             {
+                if (_txtUsername.Text.Trim() == String.Empty)
+                {
+                    errorProviderLogin.SetError(_txtUsername, "Username is Required");
+                }
+                else
+                {
+                    errorProviderLogin.SetError(_txtUsername, "");
+                }
+
+                if (_txtPassword.Text.Trim() == String.Empty)
+                {
+                    errorProviderLogin.SetError(_txtPassword, "Password is Required");
+                }
+                else
+                {
+                    errorProviderLogin.SetError(_txtPassword, "");
+                }
+
                 _configManager.Login(_txtUsername.Text, _txtPassword.Text);
                 if (_configManager.IsLoggedIn) this.Close();
-                else _lblFeedback.Text = "Invalid username or passoword.";
+                else
+                {
+                    _lblFeedback.Text = "Invalid username or password.";
+                }
             }
         }
 

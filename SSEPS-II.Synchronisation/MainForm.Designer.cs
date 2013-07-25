@@ -39,6 +39,7 @@
             this._txtFeedback = new System.Windows.Forms.TextBox();
             this._rbtnFile = new System.Windows.Forms.RadioButton();
             this.groupBoxFile = new System.Windows.Forms.GroupBox();
+            this._btnSelectMDA = new System.Windows.Forms.Button();
             this._btnSelectFlashDisk = new System.Windows.Forms.Button();
             this._lblSelectedFlash = new System.Windows.Forms.Label();
             this._rbtnReceive = new System.Windows.Forms.RadioButton();
@@ -49,7 +50,6 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemDatabseSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this._btnSelectMDA = new System.Windows.Forms.Button();
             this._panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBoxLogo)).BeginInit();
             this._panelMain.SuspendLayout();
@@ -142,7 +142,7 @@
             this._groupBoxFile.Controls.Add(this._rbtnNetwork);
             this._groupBoxFile.Location = new System.Drawing.Point(4, 1);
             this._groupBoxFile.Name = "_groupBoxFile";
-            this._groupBoxFile.Size = new System.Drawing.Size(418, 339);
+            this._groupBoxFile.Size = new System.Drawing.Size(422, 339);
             this._groupBoxFile.TabIndex = 1;
             this._groupBoxFile.TabStop = false;
             // 
@@ -185,6 +185,18 @@
             this.groupBoxFile.TabIndex = 8;
             this.groupBoxFile.TabStop = false;
             this.groupBoxFile.Text = "File";
+            // 
+            // _btnSelectMDA
+            // 
+            this._btnSelectMDA.Enabled = false;
+            this._btnSelectMDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._btnSelectMDA.Location = new System.Drawing.Point(218, 68);
+            this._btnSelectMDA.Name = "_btnSelectMDA";
+            this._btnSelectMDA.Size = new System.Drawing.Size(72, 23);
+            this._btnSelectMDA.TabIndex = 3;
+            this._btnSelectMDA.Text = "Select MDA";
+            this._btnSelectMDA.UseVisualStyleBackColor = true;
+            this._btnSelectMDA.Click += new System.EventHandler(this._btnSelectMDA_Click);
             // 
             // _btnSelectFlashDisk
             // 
@@ -296,18 +308,6 @@
             this.toolStripMenuItemDatabseSettings.Size = new System.Drawing.Size(160, 22);
             this.toolStripMenuItemDatabseSettings.Text = "Databse settings";
             this.toolStripMenuItemDatabseSettings.Click += new System.EventHandler(this.toolStripMenuItemDatabseSettings_Click);
-            // 
-            // _btnSelectMDA
-            // 
-            this._btnSelectMDA.Enabled = false;
-            this._btnSelectMDA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._btnSelectMDA.Location = new System.Drawing.Point(218, 68);
-            this._btnSelectMDA.Name = "_btnSelectMDA";
-            this._btnSelectMDA.Size = new System.Drawing.Size(72, 23);
-            this._btnSelectMDA.TabIndex = 3;
-            this._btnSelectMDA.Text = "Select MDA";
-            this._btnSelectMDA.UseVisualStyleBackColor = true;
-            this._btnSelectMDA.Click += new System.EventHandler(this._btnSelectMDA_Click);
             // 
             // MainForm
             // 

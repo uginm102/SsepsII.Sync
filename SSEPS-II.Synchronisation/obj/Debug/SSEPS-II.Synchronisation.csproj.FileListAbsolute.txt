@@ -1,4 +1,12 @@
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\bin\Debug\SSEPS-II.Synchronisation.exe.config
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS-II.Synchronisation.csprojResolveAssemblyReference.cache
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.FlashSelectionForm.resources
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.LoginForm.resources
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.MainForm.resources
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.MDASelectionForm.resources
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.Properties.Resources.resources
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.SettingsForm.resources
+C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS-II.Synchronisation.csproj.GenerateResource.Cache
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\bin\Debug\SSEPS-II.Synchronisation.exe.manifest
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\bin\Debug\SSEPS-II.Synchronisation.application
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\bin\Debug\SSEPS-II.Synchronisation.exe
@@ -10,14 +18,6 @@ C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchroni
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\bin\Debug\SsepsII.Synchronisation.DAL.pdb
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\bin\Debug\SsepsII.Synchronisation.Services.pdb
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\bin\Debug\EntityFramework.xml
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS-II.Synchronisation.csprojResolveAssemblyReference.cache
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.FlashSelectionForm.resources
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.LoginForm.resources
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.MainForm.resources
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.MDASelectionForm.resources
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.Properties.Resources.resources
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS_II.Synchronisation.SettingsForm.resources
-C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS-II.Synchronisation.csproj.GenerateResource.Cache
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS-II.Synchronisation.exe.manifest
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS-II.Synchronisation.application
 C:\Users\Eugene\Documents\Visual Studio 2012\Projects\SysCorp\SSEPS-II.Synchronisation\SSEPS-II.Synchronisation\obj\Debug\SSEPS-II.Synchronisation.exe

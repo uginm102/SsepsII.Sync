@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -42,9 +43,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this._lblFeedback = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProviderLogin = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._pictureBoxLogo)).BeginInit();
             this._panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -192,6 +195,10 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // errorProviderLogin
+            // 
+            this.errorProviderLogin.ContainerControl = this;
+            // 
             // LoginForm
             // 
             this.AcceptButton = this._btnLogin;
@@ -215,6 +222,7 @@
             this._panelHeader.ResumeLayout(false);
             this._panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +244,7 @@
         private System.Windows.Forms.Label _lblFeedback;
         private System.Windows.Forms.Label lblVersionNumber;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProviderLogin;
 
     }
 }
